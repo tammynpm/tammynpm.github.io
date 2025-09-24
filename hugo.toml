@@ -1,12 +1,13 @@
 baseURL = "https://tammynpm.github.io/"
 title = "tammynpm"
-theme = "PaperMod"
 languageCode = "en-us"
 
 # Build
-paginate = 10
 enableRobotsTXT = true
 canonifyURLs = true
+
+[pagination]
+  pagerSize = 10
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
