@@ -1,0 +1,43 @@
+baseURL = "https://tammynpm.github.io/"
+title = "tammynpm"
+theme = "PaperMod"
+languageCode = "en-us"
+
+# Build
+paginate = 10
+enableRobotsTXT = true
+canonifyURLs = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  author = "Tammy"
+  description = "Personal site powered by Hugo PaperMod"
+  keywords = ["blog", "portfolio", "hugo", "papermod"]
+  defaultTheme = "auto"   # "dark", "light", "auto"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  showtoc = true
+  tocopen = false
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 20

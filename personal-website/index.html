@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tammy — DevOps • Infra • Security</title>
+    <meta name="description" content="Tammy — low-level engineering, DevOps, infrastructure, backend, digital forensics, reverse engineering, cybersecurity." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'],
+              mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
+            },
+            colors: {
+              brand: {
+                50: '#eff6ff',
+                100: '#dbeafe',
+                200: '#bfdbfe',
+                300: '#93c5fd',
+                400: '#60a5fa',
+                500: '#3b82f6',
+                600: '#2563eb',
+                700: '#1d4ed8',
+                800: '#1e40af',
+                900: '#1e3a8a',
+              },
+            },
+            boxShadow: {
+              soft: '0 10px 20px -10px rgba(0,0,0,0.2)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Prevent FOUC: set theme class before paint -->
+    <script>
+      (function() {
+        try {
+          const stored = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) { /* noop */ }
+      })();
+    </script>
+
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body class="bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 dark:supports-[backdrop-filter]:bg-slate-950/60 dark:bg-slate-950/80 border-b border-slate-200/60 dark:border-slate-800">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+        <a href="#home" class="group inline-flex items-center gap-2">
+          <span class="relative grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-600 text-white shadow-soft">
+            <span class="font-mono text-sm">T</span>
+          </span>
+          <span class="font-semibold tracking-tight">Tammy</span>
+        </a>
+        <button id="mobileMenuBtn" class="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200/60 dark:border-slate-800">
+          <span class="sr-only">Toggle menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div id="navLinks" class="hidden md:flex items-center gap-6">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#writing" class="nav-link">Writing</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <button id="themeToggle" class="ml-2 inline-flex items-center gap-2 rounded-lg border border-slate-200/60 px-3 py-2 text-sm dark:border-slate-800">
+            <svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 hidden dark:inline"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.5 6.5-1.5-1.5M6 6 4.5 4.5m13 0L16.5 6M6 18l-1.5 1.5"/></svg>
+            <svg id="moonIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 dark:hidden"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span class="text-sm">Theme</span>
+          </button>
+        </div>
+      </nav>
+      <!-- Mobile dropdown -->
+      <div id="mobileMenu" class="md:hidden hidden border-t border-slate-200/60 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95">
+        <div class="mx-auto max-w-6xl px-4 py-3 grid gap-2">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#skills" class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#writing" class="nav-link">Writing</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <button id="themeToggleMobile" class="mt-2 inline-flex w-max items-center gap-2 rounded-lg border border-slate-200/60 px-3 py-2 text-sm dark:border-slate-800">Toggle Theme</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 -z-10 opacity-25 dark:opacity-30">
+          <div class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-80 w-[50rem] rounded-full bg-gradient-to-br from-brand-500 to-purple-700 blur-3xl"></div>
+        </div>
+        <div class="mx-auto max-w-6xl px-4 py-20 md:py-28">
+          <div class="grid items-center gap-10 md:grid-cols-12">
+            <div class="md:col-span-7">
+              <h1 class="text-4xl font-extrabold tracking-tight md:text-6xl">
+                Building secure systems from the ground up.
+              </h1>
+              <p class="mt-5 text-lg text-slate-600 dark:text-slate-300">
+                I’m Tammy — I work across low-level engineering, DevOps, infrastructure, backend systems, digital forensics, reverse engineering, and cybersecurity. I care about reliability, performance, and defense-in-depth.
+              </p>
+              <div class="mt-8 flex flex-wrap items-center gap-3">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+                <a href="#skills" class="btn-ghost">Core Skills</a>
+              </div>
+              <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+                <span class="inline-flex items-center gap-2"><span class="dot"/> SRE/DevOps</span>
+                <span class="inline-flex items-center gap-2"><span class="dot"/> Infra-as-Code</span>
+                <span class="inline-flex items-center gap-2"><span class="dot"/> Reverse Engineering</span>
+                <span class="inline-flex items-center gap-2"><span class="dot"/> Incident Response</span>
+              </div>
+            </div>
+            <div class="md:col-span-5">
+              <div class="relative mx-auto max-w-sm">
+                <div class="aspect-[4/5] overflow-hidden rounded-2xl border border-slate-200/60 bg-white shadow-soft dark:border-slate-800 dark:bg-slate-900">
+                  <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Code and terminal" class="h-full w-full object-cover"/>
+                </div>
+                <div class="absolute -bottom-6 -right-6 hidden rotate-3 rounded-xl bg-slate-900 p-3 text-xs text-white shadow-lg ring-1 ring-white/10 dark:block">
+                  <span class="font-mono">sudo make secure</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <div class="prose prose-slate dark:prose-invert max-w-none">
+            <p>
+              I enjoy digging into systems — from kernel internals and binaries to cloud orchestration and distributed backends. My approach blends pragmatism with strong security posture, focusing on observability, automation, and rigorous incident response.
+            </p>
+            <p>
+              I’ve worked on CI/CD platforms, hardened production clusters, built threat detection pipelines, and led forensic investigations. I’m comfortable in both code and command line, designing architectures that are resilient and recoverable.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="card">
+              <h3 class="card-title">Systems & Low-level</h3>
+              <ul class="skill-list">
+                <li>C, Rust, Go • Linux internals • eBPF • perf • gdb</li>
+                <li>Reverse engineering, malware analysis, memory forensics</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="card-title">DevOps & SRE</h3>
+              <ul class="skill-list">
+                <li>Kubernetes, Helm, Docker • Terraform • Ansible • Nix</li>
+                <li>Observability: Prometheus, Grafana, OpenTelemetry, ELK</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Backend & Platforms</h3>
+              <ul class="skill-list">
+                <li>Go, Python, TypeScript/Node • gRPC/REST • Postgres/Redis</li>
+                <li>Event-driven systems • Stream processing</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Security</h3>
+              <ul class="skill-list">
+                <li>Threat modeling • AppSec • IAM • Secrets & KMS • PKI</li>
+                <li>IR playbooks • SOC pipeline • SIEM • Detections</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Cloud</h3>
+              <ul class="skill-list">
+                <li>AWS, GCP, Azure • Multi-account/tenant • Networking</li>
+                <li>Cost optimization • Compliance & controls</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Tooling</h3>
+              <ul class="skill-list">
+                <li>GitHub Actions, GitLab CI, ArgoCD, Flux, Bazel</li>
+                <li>HashiCorp stack • Pulumi • Packer • Vagrant</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section">
+        <div class="container">
+          <h2 class="section-title">Experience</h2>
+          <ol class="relative border-s-l border-slate-200 dark:border-slate-800 ms-3">
+            <li class="mb-10 ms-6">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-card">
+                <div class="flex items-center justify-between gap-4">
+                  <h3 class="text-base font-semibold">Senior DevOps & Security Engineer — Company X</h3>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">2023 — Present</span>
+                </div>
+                <ul class="mt-3 list-disc ps-5 text-sm text-slate-600 dark:text-slate-300">
+                  <li>Led hardening of Kubernetes platform: network policies, PSP replacements, admission controls, and secrets management.</li>
+                  <li>Designed multi-region disaster recovery with RPO < 5 min, automated failover runbooks.</li>
+                  <li>Built eBPF-based observability for syscall tracing in prod clusters.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="mb-10 ms-6">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-card">
+                <div class="flex items-center justify-between gap-4">
+                  <h3 class="text-base font-semibold">Security Engineer (Forensics/IR) — Company Y</h3>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">2020 — 2023</span>
+                </div>
+                <ul class="mt-3 list-disc ps-5 text-sm text-slate-600 dark:text-slate-300">
+                  <li>Conducted memory and disk forensics using Volatility, KAPE, and custom Python tooling.</li>
+                  <li>Reverse engineered Windows services for persistence and C2 behaviors; wrote YARA and Sigma rules.</li>
+                  <li>Developed incident response automation and triage playbooks.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="ms-6">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <div class="timeline-card">
+                <div class="flex items-center justify-between gap-4">
+                  <h3 class="text-base font-semibold">Backend Engineer — Company Z</h3>
+                  <span class="text-xs text-slate-500 dark:text-slate-400">2017 — 2020</span>
+                </div>
+                <ul class="mt-3 list-disc ps-5 text-sm text-slate-600 dark:text-slate-300">
+                  <li>Built Go microservices with gRPC, Kafka streams, and Postgres; improved p99 latency by 35%.</li>
+                  <li>Introduced zero-downtime deploys and blue/green strategies with service mesh.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="flex items-center justify-between">
+            <h2 class="section-title">Selected Projects</h2>
+            <a href="#contact" class="text-sm text-brand-600 hover:text-brand-700 dark:text-brand-400">Work with me →</a>
+          </div>
+          <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Project Card 1 -->
+            <article class="project-card">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="Cluster nodes"/>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">Cluster Hardening Toolkit</h3>
+                <p class="project-desc">Opinionated set of policies, admission controls, and IaC modules to harden Kubernetes at scale.</p>
+                <div class="project-tags">
+                  <span>Kubernetes</span><span>OPA/Gatekeeper</span><span>Terraform</span>
+                </div>
+              </div>
+            </article>
+            <!-- Project Card 2 -->
+            <article class="project-card">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1553830591-42a0aa2e0ad5?q=80&w=1200&auto=format&fit=crop" alt="Binary analysis"/>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">REcon Lab</h3>
+                <p class="project-desc">Hands-on reverse engineering exercises with writeups, tooling, and automated test harnesses.</p>
+                <div class="project-tags">
+                  <span>Ghidra</span><span>Radare2</span><span>Python</span>
+                </div>
+              </div>
+            </article>
+            <!-- Project Card 3 -->
+            <article class="project-card">
+              <div class="project-media">
+                <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1200&auto=format&fit=crop" alt="Observability"/>
+              </div>
+              <div class="project-body">
+                <h3 class="project-title">eBPF Tracing Suite</h3>
+                <p class="project-desc">Production-safe syscall and network tracing with dashboards and anomaly alerts.</p>
+                <div class="project-tags">
+                  <span>eBPF</span><span>Go</span><span>Grafana</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Writing -->
+      <section id="writing" class="section">
+        <div class="container">
+          <h2 class="section-title">Writing</h2>
+          <div class="divide-y divide-slate-200 dark:divide-slate-800 overflow-hidden rounded-xl border border-slate-200/60 dark:border-slate-800">
+            <a class="post-row" href="#" target="_blank" rel="noopener">
+              <span class="post-title">How I approach incident response under pressure</span>
+              <span class="post-meta">Playbooks • 8 min read</span>
+            </a>
+            <a class="post-row" href="#" target="_blank" rel="noopener">
+              <span class="post-title">Tracing syscalls in prod with eBPF safely</span>
+              <span class="post-meta">Observability • 6 min read</span>
+            </a>
+            <a class="post-row" href="#" target="_blank" rel="noopener">
+              <span class="post-title">Reverse engineering Windows services for IR</span>
+              <span class="post-meta">RE/Forensics • 10 min read</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div class="card">
+              <h3 class="card-title">Get in touch</h3>
+              <p class="text-slate-600 dark:text-slate-300">I’m open to consulting and collaboration. The best way to reach me is via email.</p>
+              <a class="btn-primary mt-4 w-max" href="mailto:tammy@example.com">tammy@example.com</a>
+            </div>
+            <div class="card">
+              <h3 class="card-title">Elsewhere</h3>
+              <ul class="space-y-2 text-slate-600 dark:text-slate-300">
+                <li><a class="hover:text-brand-600 dark:hover:text-brand-400" href="#" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a class="hover:text-brand-600 dark:hover:text-brand-400" href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a class="hover:text-brand-600 dark:hover:text-brand-400" href="#" target="_blank" rel="noopener">Twitter/X</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200/60 dark:border-slate-800">
+      <div class="container py-8 text-sm text-slate-500 dark:text-slate-400">
+        <p>© <span id="year"></span> Tammy. Built with care and coffee.</p>
+      </div>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
