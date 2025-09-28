@@ -1,6 +1,6 @@
 # tammynpm.github.io
 
-This is a Hugo site configured for GitHub Pages using the PaperMod theme and GitHub Actions to deploy to the `gh-pages` branch.
+This is a Hugo site configured for GitHub Pages using the Researcher theme and GitHub Actions to deploy to the `gh-pages` branch.
 
 ## Quick start
 
@@ -21,7 +21,7 @@ Then visit http://localhost:1313
 ## Deployment
 This repo uses a GitHub Actions workflow at `.github/workflows/hugo.yaml` which will:
 - Set up Hugo (extended)
-- Clone the PaperMod theme during the build
+- Resolve the Researcher theme via Hugo Modules
 - Build the site into `public/`
 - Publish to the `gh-pages` branch using the built-in `GITHUB_TOKEN`
 
@@ -37,7 +37,7 @@ Replace the remote URL if you use SSH instead of HTTPS.
 ```bash
 git init
 git add .
-git commit -m "Initial Hugo site with PaperMod and GH Actions"
+git commit -m "Initial Hugo site with Researcher and GH Actions"
 git branch -M main
 git remote add origin https://github.com/tammynpm/tammynpm.github.io.git
 git push -u origin main

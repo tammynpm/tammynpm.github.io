@@ -2,6 +2,10 @@ baseURL = "https://tammynpm.github.io/"
 title = "tammynpm"
 languageCode = "en-us"
 
+# Theme-specific global toggles
+enableEmoji = true
+math = false
+
 # Build
 enableRobotsTXT = true
 canonifyURLs = true
@@ -12,19 +16,14 @@ canonifyURLs = true
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+[services]
+  [services.googleAnalytics]
+    id = ""
+
 [params]
   author = "Tammy"
-  description = "Personal site powered by Hugo PaperMod"
-  keywords = ["blog", "portfolio", "hugo", "papermod"]
-  defaultTheme = "auto"   # "dark", "light", "auto"
-  disableThemeToggle = false
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  showtoc = true
-  tocopen = false
+  description = "Personal site powered by Hugo Researcher"
+  keywords = ["blog", "portfolio", "hugo", "researcher"]
 
 [markup]
   [markup.goldmark]
