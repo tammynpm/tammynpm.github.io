@@ -2,8 +2,8 @@
 title: "Welcome"
 ---
 
-Hi, I'm Tammy. This is my new site built with Hugo and the PaperMod theme.
+I'm a software engineer with a passion for learning and a love for the craft. My current interests lie in Network Security and HomeLabbing. 
 
-- Check out the latest posts below.
-- Use the menu to navigate.
+You can find me on Linkedin, Spotify. 
+
 
