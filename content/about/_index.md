@@ -2,4 +2,8 @@
 title: "About"
 ---
 
-This is an about page. You can edit this file at `content/about/_index.md` to add more details about yourself, your work, or your interests.
+I'm a software engineer with a passion for learning and a love for the craft. My current interests lie in Network Security and HomeLabbing. 
+
+You can find me on Linkedin, Spotify. 
+
+
