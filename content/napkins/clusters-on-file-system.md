@@ -1,5 +1,6 @@
 ---
 title: Clusters on File Systems
+date: 2025-09-29
 draft: false
 ---
 There are many types of file systems (fs). What do we need to know to learn about disk analysis? 
@@ -25,4 +26,10 @@ Most of the time, we can use the metadata to view file contents, search for valu
 How does `fls` work? Why in some case, `file` can do a better job than `fls`? Let's dive a little bit in some of the most used The Sleuth Kit (TSK) commands. 
 
 To effectively use `fls`, we should incorporate `mmls` at the same time in order to locate the block position of where the MBR is. 
+
+In what way would you need to recover lost things? 
+
+Imagine that you have a 5TB hard disk (HDD) that holds years of your family photos and videos. And one day, when you take it out to connect to a big monitor to see these old photos again, you drop the hard disk on the ground. 
+
+Btw, this actually happened to my dad's HDD that held many photos of his children when they were young. 
 

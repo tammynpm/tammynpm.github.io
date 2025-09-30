@@ -34,9 +34,9 @@ canonifyURLs = true
 
 [menu]
   [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 10
+    name = "CTFs"
+    url = "/ctf/"
+    weight = 1
   [[menu.main]]
     name = "About"
     url = "/about/"
