@@ -33,3 +33,11 @@ Imagine that you have a 5TB hard disk (HDD) that holds years of your family phot
 
 Btw, this actually happened to my dad's HDD that held many photos of his children when they were young. 
 
+# GUID, LBA and protective MBR
+
+the protective MBR locates at LBA 0 for a bootable disk if the disk has GPT layout. 
+Why MBR still exists in GPT? for backward compability. 
+
+
+
+you can carve out a file 

@@ -2,7 +2,7 @@
 title: "Welcome"
 ---
 
-I'm a CS student with a passion for low-level learning, programming, and software. My current interests lie in Network Security and HomeLabbing. 
+Hi, my name is Tammy Nguyen. I'm a CS student at UMass Amherst, with a passion for low-level learning, programming, and software. My current interests lie in Network Security and HomeLabbing. 
 
 I have a mini homelab setup with several self-hosted services running on it.  
 

@@ -45,3 +45,6 @@ canonifyURLs = true
     name = "Napkins"
     url = "/napkins/"
     weight = 3
+  [[menu.main]]
+    name = "Projects"
+    weight = 2
