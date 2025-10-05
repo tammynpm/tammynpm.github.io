@@ -10,6 +10,6 @@ I'm a hobbyist CTF player with SavedByTheShell Team.
 
 My superpower is killing the mood. My sense of humor is a bit dry, so if I say something awkward, just know I'm probably judging myself more than you are. 
 
-You can find me on Linkedin, Spotify, and GitHub of course! 
+You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spotify, and [GitHub](https://github.com/tammynpm). 
 
 
