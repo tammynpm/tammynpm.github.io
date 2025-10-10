@@ -1,5 +1,6 @@
 ---
 title: "about"
+draft: false
 ---
 # About
 
