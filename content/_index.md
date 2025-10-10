@@ -17,7 +17,7 @@ You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spo
 
 Hi! I'm Tammy. My pronouns are she/her. I currently live in the United States before I get kicked out. 
 
-I'm a software engineer with a passion for learning and a love for the craft. My current interests lie in Network Security and HomeLabbing. 
+I'm a self-proclaimed software engineer with a passion for learning and a love for the craft. My current interests lie in Network Security and HomeLabbing. 
 
 I'm very active on the Internet, constantly bouncing between projects and activities. 
 
@@ -28,7 +28,6 @@ I write code almost every day, and I've made and maintain quite some projects.
 I enjoy watching Hiphop dance videos on youtube in my free time. 
 
 # Social
-I'm a weirdo but I can talk and love meeting new people.
 Feel free to message me and say hi! 
 
 # Tools I use
