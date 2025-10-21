@@ -19,7 +19,7 @@ Hi! I'm Tammy. My pronouns are she/her.
 
 My current interests lie in Network Security and HomeLabbing. 
 
-In my freetime, I'm hopping on CyberDefenders.org grinding to become a BlueTeamer.
+<!-- In my freetime, I'm hopping on CyberDefenders.org grinding to become a BlueTeamer. -->
 
 I'm very active on the Internet, constantly bouncing between projects and activities. 
 
