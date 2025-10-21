@@ -15,17 +15,19 @@ You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spo
 
 # About
 
-Hi! I'm Tammy. My pronouns are she/her. I currently live in the United States before I get kicked out. 
+Hi! I'm Tammy. My pronouns are she/her. 
 
-I'm a self-proclaimed software engineer with a passion for learning and a love for the craft. My current interests lie in Network Security and HomeLabbing. 
+My current interests lie in Network Security and HomeLabbing. 
+
+In my freetime, I'm hopping on CyberDefenders.org grinding to become a BlueTeamer.
 
 I'm very active on the Internet, constantly bouncing between projects and activities. 
 
-# Hobbies and interests
+<!-- # Hobbies and interests
 
 I write code almost every day, and I've made and maintain quite some projects. 
 
-I enjoy watching Hiphop dance videos on youtube in my free time. 
+I enjoy watching Hiphop dance videos on youtube in my free time.  -->
 
 # Social
 Feel free to message me and say hi! 
@@ -39,6 +41,11 @@ I sort my favorite languages by how much I like using them:
 - I regularly use and enjoy:
     - Python
     - TypeScript
+
+# Digital Forensics
+* TheSleuthKit/Autopsy
+* Wireshark/tshark/tcpdump
+* 
 
 # Reverse engineering
 * IDA, Ghidra (decompilers)
