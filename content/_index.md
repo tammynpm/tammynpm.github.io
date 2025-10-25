@@ -15,13 +15,13 @@ You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spo
 
 # About
 
-Hi! I'm Tammy. My pronouns are she/her. 
+Hi! I'm Tammy. 
 
-My current interests lie in Network Security and HomeLabbing. 
+<!-- My current interests lie in Network Security and HomeLabbing.  -->
 
 <!-- In my freetime, I'm hopping on CyberDefenders.org grinding to become a BlueTeamer. -->
-
-I'm very active on the Internet, constantly bouncing between projects and activities. 
+<!-- 
+I'm very active on the Internet, constantly bouncing between projects and activities.  -->
 
 <!-- # Hobbies and interests
 
@@ -29,34 +29,34 @@ I write code almost every day, and I've made and maintain quite some projects.
 
 I enjoy watching Hiphop dance videos on youtube in my free time.  -->
 
-# Social
-Feel free to message me and say hi! 
+<!-- # Social
+Feel free to message me and say hi!  -->
 
 # Tools I use
 I'm using Proxmox for my servers. On Linux, I use KDE Plasma as my desktop environment, specifically the "Cyberpunk Neon" theme. 
-
+<!-- 
 # Programming languages
 
 I sort my favorite languages by how much I like using them:
 - I regularly use and enjoy:
     - Python
-    - TypeScript
+    - TypeScript -->
 
-# Digital Forensics
+<!-- # Digital Forensics
 * TheSleuthKit/Autopsy
 * Wireshark/tshark/tcpdump
-* 
-
+*  -->
+<!-- 
 # Reverse engineering
 * IDA, Ghidra (decompilers)
 * x64dbg (debuggers)
-* Okteta (hex editor)
+* Okteta (hex editor) -->
 
-# Creative work
+<!-- # Creative work
 * DaVinci Resolve (video editing)
 
 # Organization and personal life
-* github (my lord)
+* github (my lord) -->
 
 You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spotify, and [GitHub](https://github.com/tammynpm).
 
