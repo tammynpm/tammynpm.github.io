@@ -23,3 +23,14 @@ For this challenge, we only need `fls` and `icat`.
 
 First, we want to see what kind of file system does it have. [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html) according to the manual, lists file and directory naems in a disk image.
 ![](image-1.png)
+
+The asterisk `*` indicates a deleted file. The first thing to do is to get the inode number next to it. It is `8202` for the deleted file `sahuang - secret map.osz` in this case. 
+
+[`icat`](https://www.sleuthkit.org/sleuthkit/man/icat.html) outputs the contents of a file given an inode number. We will use this to retrieves the deleted file. 
+
+`icat SanDisk.E01 -o 8202 > recovered.osz`
+
+To maintain the original format of the deleted file, we need to keep the `.osz` extension eventhough it looks off. 
+
+We need to identify what kind of data this is using `file` command. 
+
