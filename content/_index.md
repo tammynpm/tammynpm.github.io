@@ -32,8 +32,8 @@ I enjoy watching Hiphop dance videos on youtube in my free time.  -->
 <!-- # Social
 Feel free to message me and say hi!  -->
 
-# Tools I use
-I'm using Proxmox for my servers. On Linux, I use KDE Plasma as my desktop environment, specifically the "Cyberpunk Neon" theme. 
+<!-- # Tools I use
+I'm using Proxmox for my servers. On Linux, I use KDE Plasma as my desktop environment, specifically the "Cyberpunk Neon" theme.  -->
 <!-- 
 # Programming languages
 
