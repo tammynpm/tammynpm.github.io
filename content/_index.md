@@ -15,7 +15,7 @@ You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spo
 
 # About
 
-Hi! I'm Tammy. 
+
 
 <!-- My current interests lie in Network Security and HomeLabbing.  -->
 

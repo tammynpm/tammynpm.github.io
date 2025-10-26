@@ -1,2 +1,6 @@
 [[imports]]
 path="github.com/ojroques/hugo-researcher"
+
+
+[params.navigation]
+logo=""
