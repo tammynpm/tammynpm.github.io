@@ -43,4 +43,5 @@ canonifyURLs = true
     weight = 3
   [[menu.main]]
     name = "Projects"
+    url = "/projects/"
     weight = 2
