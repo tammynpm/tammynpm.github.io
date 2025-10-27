@@ -1,6 +1,6 @@
 ---
 title: "CTFs"
-draft: false
+draft: true
 ---
 
 Playing with SavedByTheShell weekly!
