@@ -15,7 +15,7 @@ You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spo
 
 cs major @UMassAmherst
 
-ctf player @SavedByTheShells
+ctf player @SavedByTheShell
 
 
 <!-- My current interests lie in Network Security and HomeLabbing.  -->
@@ -62,7 +62,7 @@ I sort my favorite languages by how much I like using them:
 <!-- [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/) [GitHub](https://github.com/tammynpm). -->
 
 
-<div style="display: flex; gap:8px; align-items: center;">
+<div style="display: flex; gap:16px; align-items: center;">
     <a href="https://github.com/tammynpm" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" width="24" height="24" alt="GitHub">
     </a>

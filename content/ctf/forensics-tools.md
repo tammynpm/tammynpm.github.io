@@ -1,7 +1,7 @@
 ---
 title: "Forensics Tools"
 date: 2025-10-04T20:53:11-04:00
-draft: false
+draft: true
 ---
 
 All the tools I've encountered so far playing Forensics with SavedByTheShell for half a year. 

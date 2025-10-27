@@ -1,7 +1,7 @@
 ---
 title: "Bsides Foreniscs"
 date: 2025-09-24T19:30:06-04:00
-draft: false
+draft: true
 ---
 
 In simple terms, DNS tunneling is a type of attack where hackers embed malicious code into a message that appears to be a normal request. 
