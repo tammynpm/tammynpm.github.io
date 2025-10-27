@@ -38,10 +38,6 @@ canonifyURLs = true
     url = "/ctf/"
     weight = 1
   [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 20
-  [[menu.main]]
     name = "Napkins"
     url = "/napkins/"
     weight = 3
