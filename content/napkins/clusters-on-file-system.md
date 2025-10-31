@@ -1,7 +1,7 @@
 ---
 title: Clusters on File Systems
 date: 2025-09-29
-draft: false
+draft: true
 ---
 There are many types of file systems (fs). What do we need to know to learn about disk analysis? 
 
