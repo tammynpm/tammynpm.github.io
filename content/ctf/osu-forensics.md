@@ -33,12 +33,6 @@ Using `file` command, we know that this is a zip archive data, so we change the 
 
 In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png` file. 
 
-{{< figure
-src="/static/ctf/flag.png"
-caption="content of flag.png"
-class="ma0 w-75">
-}}
-
 Answer: **osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**
 
 
