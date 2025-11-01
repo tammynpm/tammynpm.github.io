@@ -1,0 +1,1 @@
+# github.com/ojroques/hugo-researcher v0.0.0-20250801080632-3cad6a555aa7
