@@ -3,7 +3,7 @@ title: "Osu Forensics Writeup"
 date: 2025-10-25T17:47:52-04:00
 draft: false
 ---
-{{<toc>}}
+{{< toc >}}
 
 # Osu Forensics Writeup
 
