@@ -10,15 +10,16 @@ This is my writeup for the only forensics challenge `map dealer` in `osu ctf 202
 ## Challenge Summary
 
 Difficulty: 3/5
+
 Description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
 An archive `forensics_map-dealer.tar.gz` was given. 
 
-![](image.png)
+![](static/ctf/image.png)
 
-Since I know this is a disk forensics, I immediately think of using the tool `The Sleuth Kit` (TSK) which is a tool often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, `file SanDisk.E01` tells us that this is a disk image. 
+Since I know this is a disk forensics, I immediately think of using the tool `The Sleuth Kit` (TSK) which is often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, `file SanDisk.E01` tells us that this is a disk image. 
 
 First, we want to see what kind of file system does it have. The command [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html), according to the manual, lists file and directory naems in a disk image.
-![](image-1.png)
+![](static/ctf/image-1.png)
 
 The asterisk `*` indicates a deleted file. The next step is to get the inode number next to it. It is `8202` for the deleted file `sahuang - secret map.osz` in this case. 
 
@@ -32,7 +33,11 @@ Using `file` command, we know that this is a zip archive data, so we change the 
 
 In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png` file. 
 
-[flag.png](flag.png)
+{{< figure
+src="/static/ctf/flag.png"
+caption="content of flag.png"
+class="ma0 w-75">
+}}
 
 Answer: **osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**
 

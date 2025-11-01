@@ -1,5 +1,5 @@
 baseURL = "https://tammynpm.github.io/"
-title = "tammynpm"
+title = "tammy"
 languageCode = "en-us"
 
 # Theme-specific global toggles
@@ -21,7 +21,7 @@ canonifyURLs = true
     id = ""
 
 [params]
-  author = "Tammy"
+  author = "tammy"
   description = "Personal site powered by Hugo Researcher"
   keywords = ["blog", "portfolio", "hugo", "researcher"]
 
