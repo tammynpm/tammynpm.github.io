@@ -12,3 +12,9 @@ logo=""
   [[module.mounts]]
     source = 'static'
     target = 'assets'
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 5
+    ordered = false
