@@ -3,6 +3,8 @@ title: "Osu Forensics Writeup"
 date: 2025-10-25T17:47:52-04:00
 draft: false
 ---
+{{ .TableOfContents }}
+
 # Osu Forensics Writeup
 
 This is my writeup for the only forensics challenge `map dealer` in `osu ctf 2025` on Oct 24, 2025.
