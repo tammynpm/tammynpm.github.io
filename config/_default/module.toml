@@ -7,11 +7,11 @@ logo=""
 
 [module]
   [[module.mounts]]
-    source = 'assets'
-    target = 'assets'
+    source = "assets"
+    target = "assets"
   [[module.mounts]]
-    source = 'static'
-    target = 'assets'
+    source = "static"
+    target = "assets"
 
 [markup]
   [markup.tableOfContents]
