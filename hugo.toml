@@ -31,6 +31,10 @@ canonifyURLs = true
       unsafe = true
   [markup.highlight]
     noClasses = false
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 5
+
 
 [menu]
   [[menu.main]]
