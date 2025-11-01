@@ -1,36 +1,39 @@
 ---
 title: "Osu Forensics Writeup"
 date: 2025-10-25T17:47:52-04:00
-draft: true
+draft: false
 ---
+# Osu Forensics Writeup
 
 This is my writeup for the only forensics challenge `map dealer` in `osu ctf 2025` on Oct 24, 2025.
 
-We are given an archive `forensics_map-dealer.tar.gz` with this description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
+## Challenge Summary
+
+Difficulty: 3/5
+Description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
+An archive `forensics_map-dealer.tar.gz` was given. 
 
 ![](image.png)
 
+Since I know this is a disk forensics, I immediately think of using the tool `The Sleuth Kit` (TSK) which is a tool often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, `file SanDisk.E01` tells us that this is a disk image. 
 
-## What is The Sleuth Kit?
-The Sleuth Kit (TSK), by Brian Carrier, is a collection of command line tools for disk images analyzing. It is extremely useful when it comes to recovering deleted files, which is the key to solving this challenge. 
-
-Some of the common commands that are used in CTFs are `fls, mmls, icat, fsstat, dd`. 
-For this challenge, we only need `fls` and `icat`.
-
-## Data compression
-
-`file SanDisk.E01` tells us that this is a disk image. 
-
-First, we want to see what kind of file system does it have. [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html) according to the manual, lists file and directory naems in a disk image.
+First, we want to see what kind of file system does it have. The command [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html), according to the manual, lists file and directory naems in a disk image.
 ![](image-1.png)
 
-The asterisk `*` indicates a deleted file. The first thing to do is to get the inode number next to it. It is `8202` for the deleted file `sahuang - secret map.osz` in this case. 
+The asterisk `*` indicates a deleted file. The next step is to get the inode number next to it. It is `8202` for the deleted file `sahuang - secret map.osz` in this case. 
 
 [`icat`](https://www.sleuthkit.org/sleuthkit/man/icat.html) outputs the contents of a file given an inode number. We will use this to retrieves the deleted file. 
 
 `icat SanDisk.E01 -o 8202 > recovered.osz`
 
-To maintain the original format of the deleted file, we need to keep the `.osz` extension eventhough it looks off. 
+To maintain the original format of the deleted file, we need to keep the `.osz` extension when carving the data into a new file. 
 
-We need to identify what kind of data this is using `file` command. 
+Using `file` command, we know that this is a zip archive data, so we change the extension of this file into `.zip`. 
+
+In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png` file. 
+
+[flag.png](flag.png)
+
+Answer: **osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**
+
 
