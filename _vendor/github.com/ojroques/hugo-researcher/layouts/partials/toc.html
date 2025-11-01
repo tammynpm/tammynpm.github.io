@@ -1,8 +1,0 @@
-{{}}
-    {{ $toc := .TableOfContents | plainify }}
-    {{ if gt (len $toc) 0 }}
-    <aside class="toc-sidebar">
-        <div class="toc-title">Table of Contents</div>
-        {{ .TableOfContents }}
-    </aside>
-{{end}}

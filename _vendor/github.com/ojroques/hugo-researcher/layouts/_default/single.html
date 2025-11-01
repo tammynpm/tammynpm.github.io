@@ -1,9 +1,3 @@
-{{ define "main" }}
-<div class="page-with-toc {{ default 'right' .Params.tocPosition}}">
-    {{if eq (default "right" .Params.tocPosition) "left" }}
-        {{ partial "toc.html" . }}
-    {{ end }}
-</div>
 
 <div class="container">
     {{ .Content }}
