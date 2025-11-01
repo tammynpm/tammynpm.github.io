@@ -20,7 +20,8 @@ An archive `forensics_map-dealer.tar.gz` was given.
 
 Since I know this is a disk forensics, I immediately think of using the tool `The Sleuth Kit` (TSK) which is often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, `file SanDisk.E01` tells us that this is a disk image. 
 
-First, we want to see what kind of file system does it have. The command [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html), according to the manual, lists file and directory naems in a disk image.
+First, we want to see what kind of file system does it have. The command [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html), according to the manual, lists file and directory names in a disk image.
+
 ![](/ctf/image-1.png)
 
 The asterisk `*` indicates a deleted file. The next step is to get the inode number next to it. It is `8202` for the deleted file `sahuang - secret map.osz` in this case. 
