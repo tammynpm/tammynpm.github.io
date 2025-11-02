@@ -30,7 +30,7 @@ The number part of the entry shows the Metadata Address associated with this nam
 
 The asterisk `*` between the file type and the metadata address indicates a deleted file.
 
-    > Little Note about the numbering of TSK: this is exFAT file system (using fsstat command), which doesn't use inode number in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.
+> Little Note about the numbering of TSK: this is exFAT file system (using fsstat command), which doesn't use inode number in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.
 
 
 So we see the deleted file. Maybe we should extract it? We can do this using the [icat](https://www.sleuthkit.org/sleuthkit/man/icat.html) command in TSK.
