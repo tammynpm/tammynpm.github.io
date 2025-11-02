@@ -23,8 +23,9 @@ canonifyURLs = true
 
 [params]
   author = "tammy"
-  description = "Personal site powered by Hugo Researcher"
-  keywords = ["blog", "portfolio", "hugo", "researcher"]
+  description = "tammy's corner"
+  keywords = ["blog", "portfolio", "writeups", "ctf"]
+  footer_text= "Copyright © 2025 Tammy Nguyen"
 
 [markup]
   [markup.goldmark]
