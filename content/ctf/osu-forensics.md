@@ -3,7 +3,6 @@ title: "Osu Forensics Writeup"
 date: 2025-10-25T17:47:52-04:00
 draft: false
 ---
-{{ <toc> }}
 # Osu Forensics Writeup
 
 This is my writeup for the only forensics challenge `map dealer` in `osu ctf 2025` on Oct 24, 2025.
@@ -39,6 +38,6 @@ In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png
 
 ![](/ctf/flag.png)
 
-Answer: **osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**
+Flag: **osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**
 
 

@@ -1,6 +1,7 @@
 baseURL = "https://tammynpm.github.io/"
 title = "tammy"
 languageCode = "en-us"
+theme = "researcher"
 
 # Theme-specific global toggles
 enableEmoji = true

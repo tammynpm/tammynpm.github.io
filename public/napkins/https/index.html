@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Categories</title>
+    <title>Https</title>
     <meta name="description" content="Personal site powered by Hugo Researcher">
     <meta name="author" content='tammy'>
 
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="http://localhost:1313/sass/researcher.min.css">
-    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml" title="tammy" />
     </head>
 
     <body><div class="container mt-5">
@@ -50,12 +49,23 @@
 </div>
 <hr>
 <div id="content">
-<div class="container">
-    <h1>Categories</h1>
-    <ul>
-        
-    </ul>
-</div>
+<main class="container mx-auto max-w-prose px-4">
+<section>
+  <nav id="TableOfContents"></nav>
+  <p>to stop all docker containers at once (not include removing)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker stop <span class="k">$(</span>sudo docker ps -aq<span class="k">)</span>
+</span></span></code></pre></div><p>to remove all docker containers <code>docker rm $(docker ps -aq)</code></p>
+<p>use Cloud DNS to update the DNS records for <code>umasscybersec.org</code></p>
+<p>The process:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Add standard 
+</span></span><span class="line"><span class="cl">Domain name: minuteman.umasscybersec.org
+</span></span><span class="line"><span class="cl">Type: A 
+</span></span><span class="line"><span class="cl">IP: [ctfd VM static external IP]
+</span></span><span class="line"><span class="cl">TTL (time to live): 1
+</span></span><span class="line"><span class="cl">unit: second
+</span></span></code></pre></div>
+</section>
+</main>
 
         </div><div id="footer" class="mb-5">
     <hr>

@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Categories</title>
+    <title>Osu Forensics Writeup</title>
     <meta name="description" content="Personal site powered by Hugo Researcher">
     <meta name="author" content='tammy'>
 
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="http://localhost:1313/sass/researcher.min.css">
-    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml" title="tammy" />
     </head>
 
     <body><div class="container mt-5">
@@ -50,12 +49,40 @@
 </div>
 <hr>
 <div id="content">
-<div class="container">
-    <h1>Categories</h1>
-    <ul>
-        
-    </ul>
-</div>
+<main class="container mx-auto max-w-prose px-4">
+<section>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#osu-forensics-writeup">Osu Forensics Writeup</a>
+      <ul>
+        <li><a href="#challenge-summary">Challenge Summary</a></li>
+        <li><a href="#solve">solve</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  <h1 id="osu-forensics-writeup">Osu Forensics Writeup</h1>
+<p>This is my writeup for the only forensics challenge <code>map dealer</code> in <code>osu ctf 2025</code> on Oct 24, 2025.</p>
+<h2 id="challenge-summary">Challenge Summary</h2>
+<p>Difficulty: 3/5</p>
+<p>Description: <code>We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?</code>
+An archive <code>forensics_map-dealer.tar.gz</code> was given.</p>
+<p><img src="http://localhost:1313/ctf/image.png" alt=""></p>
+<h2 id="solve">solve</h2>
+<p>Since I know this is a disk forensics, I immediately think of using the tool <code>The Sleuth Kit</code> (TSK) which is often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, <code>file SanDisk.E01</code> tells us that this is a disk image.</p>
+<p>First, we want to see what kind of file system does it have. The command <a href="https://www.sleuthkit.org/sleuthkit/man/fls.html"><code>fls</code></a>, according to the manual, lists file and directory names in a disk image.</p>
+<p><img src="http://localhost:1313/ctf/image-1.png" alt=""></p>
+<p>The asterisk <code>*</code> indicates a deleted file. The next step is to get the inode number next to it. It is <code>8202</code> for the deleted file <code>sahuang - secret map.osz</code> in this case.</p>
+<p><a href="https://www.sleuthkit.org/sleuthkit/man/icat.html"><code>icat</code></a> outputs the contents of a file given an inode number. We will use this to retrieves the deleted file.</p>
+<p><code>icat SanDisk.E01 -o 8202 &gt; recovered.osz</code></p>
+<p>To maintain the original format of the deleted file, we need to keep the <code>.osz</code> extension when carving the data into a new file.</p>
+<p>Using <code>file</code> command, we know that this is a zip archive data, so we change the extension of this file into <code>.zip</code>.</p>
+<p>In the <code>recovered.zip</code> archive, we can see the handwritten flag in the <code>flag.png</code> file.</p>
+<p><img src="http://localhost:1313/ctf/flag.png" alt=""></p>
+<p>Flag: <strong>osu{I_hope_my_h4ndrwr1ting_is_readable_xd}</strong></p>
+
+</section>
+</main>
 
         </div><div id="footer" class="mb-5">
     <hr>

@@ -1,2 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on tammynpm</title><link>https://tammynpm.github.io/posts/</link><description>Recent content in Posts on tammynpm</description><generator>Hugo -- 0.146.0</generator><language>en-us</language><lastBuildDate>Wed, 24 Sep 2025 18:02:34 -0400</lastBuildDate><atom:link href="https://tammynpm.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://tammynpm.github.io/posts/hello-world/</link><pubDate>Wed, 24 Sep 2025 18:02:34 -0400</pubDate><guid>https://tammynpm.github.io/posts/hello-world/</guid><description>&lt;p>Welcome to your new Hugo site deployed with GitHub Pages and PaperMod!&lt;/p>
-&lt;p>You can edit this post at &lt;code>content/posts/hello-world.md&lt;/code> or create more posts in the same folder.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on tammy</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on tammy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Oct 2025 03:00:04 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Infra Writeup MinutemanCTF2025</title>
+      <link>http://localhost:1313/posts/infra-writeup-minuteman2025/</link>
+      <pubDate>Sun, 26 Oct 2025 03:00:04 -0400</pubDate>
+      <guid>http://localhost:1313/posts/infra-writeup-minuteman2025/</guid>
+      <description>&lt;h1 id=&#34;infra-writeup-minutemanctf2025&#34;&gt;Infra Writeup: MinutemanCTF2025&lt;/h1&gt;&#xA;&lt;p&gt;The goal of this post is to document the infra setup for MinutemanCTF2025 &amp;ndash; what was there, what we could do better &amp;ndash; for future reference and make it easier to bring new members onboard.&lt;/p&gt;&#xA;&lt;h2 id=&#34;gcp&#34;&gt;GCP&lt;/h2&gt;&#xA;&lt;p&gt;We decided to use Google Cloud Platform (GCP) as last year as our main cloud provider.&lt;/p&gt;&#xA;&lt;h3 id=&#34;vms&#34;&gt;VMs&lt;/h3&gt;&#xA;&lt;h3 id=&#34;gcp-bucket&#34;&gt;GCP Bucket&lt;/h3&gt;&#xA;&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;&#xA;&lt;h3 id=&#34;docker-compose-plugin&#34;&gt;docker compose plugin&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Wed, 24 Sep 2025 18:02:34 -0400</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>&lt;!-- Welcome to your new Hugo site deployed with GitHub Pages and PaperMod!&#xA;&#xA;You can edit this post at `content/posts/hello-world.md` or create more posts in the same folder.&#xA; --&gt;&#xA;&lt;p&gt;under construction&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

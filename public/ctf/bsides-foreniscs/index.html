@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Categories</title>
+    <title>Bsides Foreniscs</title>
     <meta name="description" content="Personal site powered by Hugo Researcher">
     <meta name="author" content='tammy'>
 
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="http://localhost:1313/sass/researcher.min.css">
-    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml" title="tammy" />
     </head>
 
     <body><div class="container mt-5">
@@ -50,12 +49,20 @@
 </div>
 <hr>
 <div id="content">
-<div class="container">
-    <h1>Categories</h1>
-    <ul>
-        
-    </ul>
-</div>
+<main class="container mx-auto max-w-prose px-4">
+<section>
+  <nav id="TableOfContents"></nav>
+  <p>In simple terms, DNS tunneling is a type of attack where hackers embed malicious code into a message that appears to be a normal request.</p>
+<p>DNS is a protocol that provides conversations between domain names and IP addresses.</p>
+<p>To visit a website, you need to know the IP address of the server hosting the website.</p>
+<p>To understand DNS simply, think of when a UMass student needs to go to <code>canvas.umass.edu</code>. the DNS server needs to ask a <code>.com</code> DNS server for the IP address of the <code>canvas.umass.edu</code> DNS server. A second request would provide the I address of the server hosting the desired webpage.</p>
+<p>DNS tunneling leverage this characteristic of the DNS traffic to implement a commmand and control channel.</p>
+<p>Let&rsquo;s take a look of a DNS request captured with Wireshark: <code>Standard query 0x7018 A xn--part3-hw3b.xgk3djnzts2mr.bsidesct.xn--org-9o0a OPT</code>
+So Almost anything can be a domain name.</p>
+<p>For the sake of simplicity, just know <code>A</code> is the record type of this DNS query. <code>A</code> helps maps the domain name to an IPv4 address.</p>
+
+</section>
+</main>
 
         </div><div id="footer" class="mb-5">
     <hr>
