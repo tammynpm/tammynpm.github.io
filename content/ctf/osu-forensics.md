@@ -12,17 +12,23 @@ This is my writeup for the only forensics challenge `map dealer` in `osu ctf 202
 Difficulty: 3/5
 
 Description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
-An archive `forensics_map-dealer.tar.gz` was given. 
+
 
 ![](/ctf/image.png)
 
-## solve
+## Solve
 
-Since I know this is a disk forensics, I immediately think of using the tool `The Sleuth Kit` (TSK) which is often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, `file SanDisk.E01` tells us that this is a disk image. 
+After extracting the given archive, we see a disk image named `SanDisk.E01`.
 
-First, we want to see what kind of file system does it have. The command [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html), according to the manual, lists file and directory names in a disk image.
+First of all, we want to see what file system this drive has. One of the tools to do this is The Sleuth Kit, also often used in law enforcement. A little bit about TSK is that it was made by Brian Carrier who created Autopsy, the GUI company to TSK.  
+
+We use the command [fls](https://www.sleuthkit.org/sleuthkit/man/fls.html) to list all file and directory names in this disk image.
 
 ![](/ctf/image-1.png)
+
+An entry of the output of the fls command looks like this 
+
+&nbsp   *file type &nbsp; metadata address: &nbsp; file name* 
 
 The `r/r` values show the file type. The first `r` (regular file) is the type as saved in the file's file name structure and the second 'r' is the type as saved in the file's metadata structure.
 
@@ -30,7 +36,7 @@ The number part of the entry shows the Metadata Address associated with this nam
 
 The asterisk `*` between the file type and the metadata address indicates a deleted file.
 
-> Little Note about the numbering of TSK: this is exFAT file system (using fsstat command), which doesn't use inode number in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.
+> About the numbering of TSK: this is exFAT file system (we know this by using the [fsstat](https://www.sleuthkit.org/sleuthkit/man/fsstat.html) command), which doesn't use inode number as in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.
 
 
 So we see the deleted file. Maybe we should extract it? We can do this using the [icat](https://www.sleuthkit.org/sleuthkit/man/icat.html) command in TSK.
@@ -45,7 +51,10 @@ In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png
 
 ![](/ctf/flag.png)
 
-Flag: **osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**
+Here is the flag: 
+<label class="spoiler-wrapper">
+<span class="spoiler-text">**osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**</span>
+</label>
 
 I didn't want to go too far with TSK, but it is a powerful tool to have in your toolbox.
 

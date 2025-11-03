@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Osu Forensics Writeup</title>
-    <meta name="description" content="Personal site powered by Hugo Researcher">
+    <meta name="description" content="tammy&#39;s corner">
     <meta name="author" content='tammy'>
 
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
@@ -56,7 +56,7 @@
     <li><a href="#osu-forensics-writeup">Osu Forensics Writeup</a>
       <ul>
         <li><a href="#challenge-summary">Challenge Summary</a></li>
-        <li><a href="#solve">solve</a></li>
+        <li><a href="#solve">Solve</a></li>
       </ul>
     </li>
   </ul>
@@ -65,21 +65,32 @@
 <p>This is my writeup for the only forensics challenge <code>map dealer</code> in <code>osu ctf 2025</code> on Oct 24, 2025.</p>
 <h2 id="challenge-summary">Challenge Summary</h2>
 <p>Difficulty: 3/5</p>
-<p>Description: <code>We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?</code>
-An archive <code>forensics_map-dealer.tar.gz</code> was given.</p>
+<p>Description: <code>We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?</code></p>
 <p><img src="http://localhost:1313/ctf/image.png" alt=""></p>
-<h2 id="solve">solve</h2>
-<p>Since I know this is a disk forensics, I immediately think of using the tool <code>The Sleuth Kit</code> (TSK) which is often used in law enforcements. It is made by Brian Carrier, who also created Autopsy, the GUI version of TSK. Additionally, <code>file SanDisk.E01</code> tells us that this is a disk image.</p>
-<p>First, we want to see what kind of file system does it have. The command <a href="https://www.sleuthkit.org/sleuthkit/man/fls.html"><code>fls</code></a>, according to the manual, lists file and directory names in a disk image.</p>
+<h2 id="solve">Solve</h2>
+<p>After extracting the given archive, we see a disk image named <code>SanDisk.E01</code>.</p>
+<p>First of all, we want to see what file system this drive has. One of the tools to do this is The Sleuth Kit, also often used in law enforcement. A little bit about TSK is that it was made by Brian Carrier who created Autopsy, the GUI company to TSK.</p>
+<p>We use the command <a href="https://www.sleuthkit.org/sleuthkit/man/fls.html">fls</a> to list all file and directory names in this disk image.</p>
 <p><img src="http://localhost:1313/ctf/image-1.png" alt=""></p>
-<p>The asterisk <code>*</code> indicates a deleted file. The next step is to get the inode number next to it. It is <code>8202</code> for the deleted file <code>sahuang - secret map.osz</code> in this case.</p>
-<p><a href="https://www.sleuthkit.org/sleuthkit/man/icat.html"><code>icat</code></a> outputs the contents of a file given an inode number. We will use this to retrieves the deleted file.</p>
+<p>An entry of the output of the fls command looks like this</p>
+<p>&amp;nbsp   <em>file type   metadata address:   file name</em></p>
+<p>The <code>r/r</code> values show the file type. The first <code>r</code> (regular file) is the type as saved in the file&rsquo;s file name structure and the second &lsquo;r&rsquo; is the type as saved in the file&rsquo;s metadata structure.</p>
+<p>The number part of the entry shows the Metadata Address associated with this name.</p>
+<p>The asterisk <code>*</code> between the file type and the metadata address indicates a deleted file.</p>
+<blockquote>
+<p>About the numbering of TSK: this is exFAT file system (we know this by using the <a href="https://www.sleuthkit.org/sleuthkit/man/fsstat.html">fsstat</a> command), which doesn&rsquo;t use inode number as in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.</p>
+</blockquote>
+<p>So we see the deleted file. Maybe we should extract it? We can do this using the <a href="https://www.sleuthkit.org/sleuthkit/man/icat.html">icat</a> command in TSK.</p>
 <p><code>icat SanDisk.E01 -o 8202 &gt; recovered.osz</code></p>
 <p>To maintain the original format of the deleted file, we need to keep the <code>.osz</code> extension when carving the data into a new file.</p>
 <p>Using <code>file</code> command, we know that this is a zip archive data, so we change the extension of this file into <code>.zip</code>.</p>
 <p>In the <code>recovered.zip</code> archive, we can see the handwritten flag in the <code>flag.png</code> file.</p>
 <p><img src="http://localhost:1313/ctf/flag.png" alt=""></p>
-<p>Flag: <strong>osu{I_hope_my_h4ndrwr1ting_is_readable_xd}</strong></p>
+<p>Here is the flag:
+<label class="spoiler-wrapper">
+<span class="spoiler-text"><strong>osu{I_hope_my_h4ndrwr1ting_is_readable_xd}</strong></span>
+</label></p>
+<p>I didn&rsquo;t want to go too far with TSK, but it is a powerful tool to have in your toolbox.</p>
 
 </section>
 </main>
