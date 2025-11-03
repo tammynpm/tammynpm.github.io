@@ -28,7 +28,7 @@ We use the command [fls](https://www.sleuthkit.org/sleuthkit/man/fls.html) to li
 
 An entry of the output of the fls command looks like this 
 
-&nbsp   *file type &nbsp; metadata address: &nbsp; file name* 
+&nbsp; *file type &nbsp; metadata address: &nbsp; file name* 
 
 The `r/r` values show the file type. The first `r` (regular file) is the type as saved in the file's file name structure and the second 'r' is the type as saved in the file's metadata structure.
 
@@ -56,5 +56,4 @@ Here is the flag:
 <span class="spoiler-text">**osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**</span>
 </label>
 
-I didn't want to go too far with TSK, but it is a powerful tool to have in your toolbox.
 
