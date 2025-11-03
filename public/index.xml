@@ -6,49 +6,14 @@
     <description>Recent content in Welcome on tammy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Oct 2025 22:42:07 -0400</lastBuildDate>
+    <lastBuildDate>Mon, 03 Nov 2025 17:42:21 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Terraforms Proxmox</title>
-      <link>http://localhost:1313/napkins/terraforms-proxmox/</link>
-      <pubDate>Fri, 31 Oct 2025 22:42:07 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/terraforms-proxmox/</guid>
-      <description>&lt;h1 id=&#34;terraforms-scripts-to-orchestrate-proxmox&#34;&gt;Terraforms scripts to orchestrate Proxmox&lt;/h1&gt;</description>
-    </item>
-    <item>
-      <title>Git Tracking</title>
-      <link>http://localhost:1313/napkins/git-tracking/</link>
-      <pubDate>Fri, 31 Oct 2025 20:11:15 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/git-tracking/</guid>
-      <description>&lt;h1&gt;&lt;/h1&gt;</description>
-    </item>
-    <item>
-      <title>Hacktheboo</title>
-      <link>http://localhost:1313/ctf/hacktheboo/</link>
-      <pubDate>Sun, 26 Oct 2025 03:14:32 -0400</pubDate>
-      <guid>http://localhost:1313/ctf/hacktheboo/</guid>
-      <description>&lt;p&gt;hacktheboo2025 forensics writeup&lt;/p&gt;&#xA;&lt;h1 id=&#34;chall1&#34;&gt;chall1&lt;/h1&gt;&#xA;&lt;p&gt;given:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Homelab</title>
-      <link>http://localhost:1313/projects/homelab/</link>
-      <pubDate>Sun, 26 Oct 2025 03:08:03 -0400</pubDate>
-      <guid>http://localhost:1313/projects/homelab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Infra Writeup MinutemanCTF2025</title>
-      <link>http://localhost:1313/posts/infra-writeup-minuteman2025/</link>
-      <pubDate>Sun, 26 Oct 2025 03:00:04 -0400</pubDate>
-      <guid>http://localhost:1313/posts/infra-writeup-minuteman2025/</guid>
-      <description>&lt;h1 id=&#34;infra-writeup-minutemanctf2025&#34;&gt;Infra Writeup: MinutemanCTF2025&lt;/h1&gt;&#xA;&lt;p&gt;The goal of this post is to document the infra setup for MinutemanCTF2025 &amp;ndash; what was there, what we could do better &amp;ndash; for future reference and make it easier to bring new members onboard.&lt;/p&gt;&#xA;&lt;h2 id=&#34;gcp&#34;&gt;GCP&lt;/h2&gt;&#xA;&lt;p&gt;We decided to use Google Cloud Platform (GCP) as last year as our main cloud provider.&lt;/p&gt;&#xA;&lt;h3 id=&#34;vms&#34;&gt;VMs&lt;/h3&gt;&#xA;&lt;h3 id=&#34;gcp-bucket&#34;&gt;GCP Bucket&lt;/h3&gt;&#xA;&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;&#xA;&lt;h3 id=&#34;docker-compose-plugin&#34;&gt;docker compose plugin&lt;/h3&gt;</description>
-    </item>
-    <item>
-      <title>My First Malware</title>
-      <link>http://localhost:1313/projects/my-first-malware/</link>
-      <pubDate>Sun, 26 Oct 2025 02:48:53 -0400</pubDate>
-      <guid>http://localhost:1313/projects/my-first-malware/</guid>
-      <description>&lt;h1 id=&#34;how-i-created-a-yara-rule-challenge-for-minutemanctf2025&#34;&gt;How I created a YARA Rule Challenge for MinutemanCTF2025&lt;/h1&gt;&#xA;&lt;p&gt;Before we start, all creds go to Jeremy Dunn for this original idea.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Fun Facts: I almost fully switched to Linux, but this project held me back to Windows.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;After I scrolled through&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-malware&#34;&gt;What is malware?&lt;/h1&gt;&#xA;&lt;p&gt;malware is just malicious software.&lt;/p&gt;&#xA;&lt;h1 id=&#34;yara&#34;&gt;YARA&lt;/h1&gt;&#xA;&lt;p&gt;&lt;code&gt;Yet Another Recursive Anonym&lt;/code&gt; a.k.a YARA are rules used to detect malware in a file.&lt;/p&gt;&#xA;&lt;p&gt;A YARA rule typically looks like this:&lt;/p&gt;</description>
+      <title>Challenges I Made</title>
+      <link>http://localhost:1313/napkins/my-challs/</link>
+      <pubDate>Mon, 03 Nov 2025 17:42:21 -0500</pubDate>
+      <guid>http://localhost:1313/napkins/my-challs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/tammynpm/my-ctf-challenges#&#34;&gt;https://github.com/tammynpm/my-ctf-challenges#&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Osu Forensics Writeup</title>
@@ -56,41 +21,6 @@
       <pubDate>Sat, 25 Oct 2025 17:47:52 -0400</pubDate>
       <guid>http://localhost:1313/ctf/osu-forensics/</guid>
       <description>&lt;h1 id=&#34;osu-forensics-writeup&#34;&gt;Osu Forensics Writeup&lt;/h1&gt;&#xA;&lt;p&gt;This is my writeup for the only forensics challenge &lt;code&gt;map dealer&lt;/code&gt; in &lt;code&gt;osu ctf 2025&lt;/code&gt; on Oct 24, 2025.&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 3/5&lt;/p&gt;&#xA;&lt;p&gt;Description: &lt;code&gt;We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?&lt;/code&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Forensics Tools</title>
-      <link>http://localhost:1313/ctf/forensics-tools/</link>
-      <pubDate>Sat, 04 Oct 2025 20:53:11 -0400</pubDate>
-      <guid>http://localhost:1313/ctf/forensics-tools/</guid>
-      <description>&lt;p&gt;All the tools I&amp;rsquo;ve encountered so far playing Forensics with SavedByTheShell for half a year.&#xA;Forensics are a new field comparing to other subfields in Cybersecurity, but also really broad.&#xA;Listing here are some of the most common open-source/free tools to use in different types of Forensics.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;First, we have file or disk forensics.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Autopsy&lt;/li&gt;&#xA;&lt;li&gt;The Sleuth Kit&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>Https</title>
-      <link>http://localhost:1313/napkins/https/</link>
-      <pubDate>Tue, 30 Sep 2025 23:49:23 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/https/</guid>
-      <description>&lt;p&gt;to stop all docker containers at once (not include removing)&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker stop &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;sudo docker ps -aq&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;to remove all docker containers &lt;code&gt;docker rm $(docker ps -aq)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;use Cloud DNS to update the DNS records for &lt;code&gt;umasscybersec.org&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;The process:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Add standard &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Domain name: minuteman.umasscybersec.org&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Type: A &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IP: [ctfd VM static external IP]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;TTL (time to live): 1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unit: second&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Clusters on File Systems</title>
-      <link>http://localhost:1313/napkins/clusters-on-file-system/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/napkins/clusters-on-file-system/</guid>
-      <description>&lt;p&gt;There are many types of file systems (fs). What do we need to know to learn about disk analysis?&lt;/p&gt;&#xA;&lt;p&gt;FAT fs has a field that identifies how many sectors are in a cluster, and it must have a value that is a power of 2.&lt;/p&gt;&#xA;&lt;p&gt;A Linux tool that is used for partition recovery is &lt;code&gt;gpart&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The NTFS has 2048-byte clusters and 512-byte sectors.&lt;/p&gt;&#xA;&lt;p&gt;All file systems have slack space because all file systems allocate data in multiple-byte chunks instead of in individual bytes. Slack space is considered allocated data, but if you extract the unallocated data from a file system, it should not include the slack space of a file.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>You can&#39;t fix your mistake</title>
-      <link>http://localhost:1313/napkins/mistake/</link>
-      <pubDate>Sun, 28 Sep 2025 19:03:57 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/mistake/</guid>
-      <description>&lt;p&gt;You can&amp;rsquo;t fix your mistake&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Bsides Foreniscs</title>
-      <link>http://localhost:1313/ctf/bsides-foreniscs/</link>
-      <pubDate>Wed, 24 Sep 2025 19:30:06 -0400</pubDate>
-      <guid>http://localhost:1313/ctf/bsides-foreniscs/</guid>
-      <description>&lt;p&gt;In simple terms, DNS tunneling is a type of attack where hackers embed malicious code into a message that appears to be a normal request.&lt;/p&gt;&#xA;&lt;p&gt;DNS is a protocol that provides conversations between domain names and IP addresses.&lt;/p&gt;&#xA;&lt;p&gt;To visit a website, you need to know the IP address of the server hosting the website.&lt;/p&gt;&#xA;&lt;p&gt;To understand DNS simply, think of when a UMass student needs to go to &lt;code&gt;canvas.umass.edu&lt;/code&gt;. the DNS server needs to ask a &lt;code&gt;.com&lt;/code&gt; DNS server for the IP address of the &lt;code&gt;canvas.umass.edu&lt;/code&gt; DNS server. A second request would provide the I address of the server hosting the desired webpage.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello World</title>
