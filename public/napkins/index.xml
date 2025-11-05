@@ -15,40 +15,5 @@
       <guid>http://localhost:1313/napkins/my-challs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/tammynpm/my-ctf-challenges#&#34;&gt;https://github.com/tammynpm/my-ctf-challenges#&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    <item>
-      <title>Terraforms Proxmox</title>
-      <link>http://localhost:1313/napkins/terraforms-proxmox/</link>
-      <pubDate>Fri, 31 Oct 2025 22:42:07 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/terraforms-proxmox/</guid>
-      <description>&lt;h1 id=&#34;terraforms-scripts-to-orchestrate-proxmox&#34;&gt;Terraforms scripts to orchestrate Proxmox&lt;/h1&gt;</description>
-    </item>
-    <item>
-      <title>Git Tracking</title>
-      <link>http://localhost:1313/napkins/git-tracking/</link>
-      <pubDate>Fri, 31 Oct 2025 20:11:15 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/git-tracking/</guid>
-      <description>&lt;h1&gt;&lt;/h1&gt;</description>
-    </item>
-    <item>
-      <title>Https</title>
-      <link>http://localhost:1313/napkins/https/</link>
-      <pubDate>Tue, 30 Sep 2025 23:49:23 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/https/</guid>
-      <description>&lt;p&gt;to stop all docker containers at once (not include removing)&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo docker stop &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;sudo docker ps -aq&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;to remove all docker containers &lt;code&gt;docker rm $(docker ps -aq)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;use Cloud DNS to update the DNS records for &lt;code&gt;umasscybersec.org&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;The process:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Add standard &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Domain name: minuteman.umasscybersec.org&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Type: A &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;IP: [ctfd VM static external IP]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;TTL (time to live): 1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;unit: second&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Clusters on File Systems</title>
-      <link>http://localhost:1313/napkins/clusters-on-file-system/</link>
-      <pubDate>Mon, 29 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/napkins/clusters-on-file-system/</guid>
-      <description>&lt;p&gt;There are many types of file systems (fs). What do we need to know to learn about disk analysis?&lt;/p&gt;&#xA;&lt;p&gt;FAT fs has a field that identifies how many sectors are in a cluster, and it must have a value that is a power of 2.&lt;/p&gt;&#xA;&lt;p&gt;A Linux tool that is used for partition recovery is &lt;code&gt;gpart&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The NTFS has 2048-byte clusters and 512-byte sectors.&lt;/p&gt;&#xA;&lt;p&gt;All file systems have slack space because all file systems allocate data in multiple-byte chunks instead of in individual bytes. Slack space is considered allocated data, but if you extract the unallocated data from a file system, it should not include the slack space of a file.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>You can&#39;t fix your mistake</title>
-      <link>http://localhost:1313/napkins/mistake/</link>
-      <pubDate>Sun, 28 Sep 2025 19:03:57 -0400</pubDate>
-      <guid>http://localhost:1313/napkins/mistake/</guid>
-      <description>&lt;p&gt;You can&amp;rsquo;t fix your mistake&lt;/p&gt;</description>
-    </item>
   </channel>
 </rss>

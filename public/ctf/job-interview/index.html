@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Job Interview</title>
+    <title>Job Interview Writeup</title>
     <meta name="description" content="tammy&#39;s corner">
     <meta name="author" content='tammy'>
 
@@ -53,7 +53,7 @@
 <section>
   <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#job-interview-writeup">Job Interview Writeup</a>
       <ul>
         <li><a href="#challenge-summary">Challenge Summary</a></li>
         <li><a href="#solving-the-challenge">Solving the challenge</a>
@@ -71,13 +71,14 @@
     </li>
   </ul>
 </nav>
-  <p>This is my writeup for <code>Job Interview</code> challenge in Forensics category in root-me.org</p>
+  <h1 id="job-interview-writeup">Job Interview Writeup</h1>
+<p>This is my writeup for <code>Job Interview</code> challenge in Forensics category at <a href="https://www.root-me.org/en/Challenges/Forensic/Job-interview">root-me.org</a></p>
 <h2 id="challenge-summary">Challenge Summary</h2>
-<p>Difficulty: 35 points
-Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.
-Author: makhno</p>
+<p>Difficulty: 35 points</p>
+<p>Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.</p>
+<p>Author: makhno</p>
 <p>We are given a file named <code>image_forensics.e01</code> which is a image file format. As usualy, I would do some sanity checks for a disk file like using <code>file</code> command or some commands in <code>The Sleuth Kit</code> (TSK).</p>
-<p>In this case, when do <code>fls</code> to look for file system, we are left with a result <code>Unsupported image file type (Tar Archive)</code>. Why is a disk image archived?</p>
+<p>In this case, when do the command <code>fls</code> to look for file system, we are left with a result <code>Unsupported image file type (Tar Archive)</code>. Why is a disk image archived?</p>
 <h2 id="solving-the-challenge">Solving the challenge</h2>
 <h3 id="sanity-checks">Sanity checks</h3>
 <p>First, we need to edit the file format of this file to the correct format which is <code>.tar</code>.</p>
@@ -94,22 +95,24 @@ Author: makhno</p>
 <p>This means we are on the right track. After changing the file name to <code>img2.tar</code>, we can extract it using the command <code>tar -xvf img2.tar</code>. Open the extracted folder, we can see there is only one file named <code>bcache24.bmc</code>.</p>
 <p>The <code>.bmc</code> extension indicates this is a bitmap cache.</p>
 <h3 id="what-is-bitmap-cache">What is bitmap cache?</h3>
-<p>According to Microsoft:</p>
+<p>According to <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-rdpegdi/2bf92588-42bd-4527-8b3e-b90c56e292d2">Microsoft</a>:</p>
 <blockquote>
 <p>Bitmap caches are used by the client and server to store graphic bitmaps. Each bitmap cache holds bitmaps of a specified size in pixels (known as the &ldquo;tile size&rdquo;). If a bitmap does not fit into a single cache entry, the server uses a tiling algorithm to divide the bitmap into tiles that will fit into the cache entries so that they can be stored separately into the cache.</p>
 </blockquote>
 <p>This was a solution to the sluggish RDP session when dial-up internet was used.</p>
+<p>The number appended to the end, usually a 2, 22, or 24 represent the quality of the images. The higher the number the higher the quality of the bitmap images generated.</p>
 <h4 id="remote-desktop-protocol-rdp">Remote Desktop Protocol (RDP)</h4>
 <p>is a protocol in Windows machine that allows users to connect to another computer remotely with a graphical user interface (GUI). RDP bitmap cache was born to improve the RDP user experience. It stores bitmap sized images of the RDP sessions into a file so that the sessions can reuse these images.</p>
-<p>The number appended to the end, usually a 2, 22, or 24 represent the quality of the images. The higher the number the higher the quality of the bitmap images generated.</p>
 <h3 id="how-to-view-bmc-files">How to view bmc files?</h3>
-<p>This <a href="https://medium.com/@ronald.craft/blind-forensics-with-the-rdp-bitmap-cache-16e0c202f91c">article</a> introduces tools to work with bitmap cache, including<a href="https://github.com/ANSSI-FR/bmc-tools">bmc-tools</a> by ANSSI-FR, the French National Agency for the Security of Information Systems, the French equivalent of the NSA.</p>
+<p>This <a href="https://medium.com/@ronald.craft/blind-forensics-with-the-rdp-bitmap-cache-16e0c202f91c">article</a> introduces some tools to work with bitmap cache, including <a href="https://github.com/ANSSI-FR/bmc-tools">bmc-tools</a> by ANSSI-FR, the French National Agency for the Security of Information Systems.</p>
 <pre tabindex="0"><code class="language-code" data-lang="code">python3 bmc-tools.py -s ../bcache24.bmc -d ../extracted-bmc -b
 [+++] Processing a single file: &#39;../bcache24.bmc&#39;.
 [+++] Processing a file: &#39;../bcache24.bmc&#39;.
 [===] 575 tiles successfully extracted in the end.
 [===] Successfully exported 575 files.
 </code></pre><p>We got 575 image files out of the bitmap cache. These files have the <code>.bmp</code> extension, a native Windows image format, so we can open this easily in Paint. Other OSes might need access to third party to view them.</p>
+<p><img src="ctf/job-interview/image4.png" alt="">
+<img src="ctf/job-interview/image5.png" alt=""></p>
 <p>Articles that might be helpful:
 <a href="https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp">https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp</a></p>
 <p><a href="https://www.allthingsdfir.com/do-you-even-bitmap-cache-bro/">https://www.allthingsdfir.com/do-you-even-bitmap-cache-bro/</a></p>

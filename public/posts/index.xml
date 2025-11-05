@@ -6,15 +6,8 @@
     <description>Recent content in Posts on tammy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Oct 2025 03:00:04 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 24 Sep 2025 18:02:34 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Infra Writeup MinutemanCTF2025</title>
-      <link>http://localhost:1313/posts/infra-writeup-minuteman2025/</link>
-      <pubDate>Sun, 26 Oct 2025 03:00:04 -0400</pubDate>
-      <guid>http://localhost:1313/posts/infra-writeup-minuteman2025/</guid>
-      <description>&lt;h1 id=&#34;infra-writeup-minutemanctf2025&#34;&gt;Infra Writeup: MinutemanCTF2025&lt;/h1&gt;&#xA;&lt;p&gt;The goal of this post is to document the infra setup for MinutemanCTF2025 &amp;ndash; what was there, what we could do better &amp;ndash; for future reference and make it easier to bring new members onboard.&lt;/p&gt;&#xA;&lt;h2 id=&#34;gcp&#34;&gt;GCP&lt;/h2&gt;&#xA;&lt;p&gt;We decided to use Google Cloud Platform (GCP) as last year as our main cloud provider.&lt;/p&gt;&#xA;&lt;h3 id=&#34;vms&#34;&gt;VMs&lt;/h3&gt;&#xA;&lt;h3 id=&#34;gcp-bucket&#34;&gt;GCP Bucket&lt;/h3&gt;&#xA;&lt;h2 id=&#34;docker&#34;&gt;Docker&lt;/h2&gt;&#xA;&lt;h3 id=&#34;docker-compose-plugin&#34;&gt;docker compose plugin&lt;/h3&gt;</description>
-    </item>
     <item>
       <title>Hello World</title>
       <link>http://localhost:1313/posts/hello-world/</link>
