@@ -15,13 +15,14 @@ Description: You are invited to an interview for a forensics investigator positi
 
 Author: makhno
 
+## Solving the challenge
+
+### Sanity checks
+
 We are given a file named `image_forensics.e01` which is a image file format. As usualy, I would do some sanity checks for a disk file like using `file` command or some commands in `The Sleuth Kit` (TSK).
 
 In this case, when do the command `fls` to look for file system, we are left with a result `Unsupported image file type (Tar Archive)`. Why is a disk image archived? 
 
-## Solving the challenge
-
-### Sanity checks
 First, we need to edit the file format of this file to the correct format which is `.tar`. 
 
 What happened after I changed this to a `.tar` archive and extract it? 
