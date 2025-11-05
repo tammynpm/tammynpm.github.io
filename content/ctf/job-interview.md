@@ -28,7 +28,7 @@ What happened after I changed this to a `.tar` archive and extract it?
 
 Surprise suprise, the output showed that this is not a tar archive 
 
-![](ctf/job-interview/image1.png)
+![](/ctf/job-interview/image1.png)
 
 How could this be? maybe this is not the correct format as well. 
 
@@ -36,13 +36,13 @@ We need to retrieve the raw format of this file.
 
 One way to do it is to use the commmand-line utility `ewfexport` from the libewf package.
 
-![](ctf/job-interview/image2.png)
+![](/ctf/job-interview/image2.png)
 
 During the exporting process, some information is required, such as filename without extension. The file was named as `img2` as the image above. 
 
 Now that we have the raw file `img2.raw`, when do the `file` command again, we get this information: 
 
-![](ctf/job-interview/image3.png)
+![](/ctf/job-interview/image3.png)
 
 This means we are on the right track. After changing the file name to `img2.tar`, we can extract it using the command `tar -xvf img2.tar`. Open the extracted folder, we can see there is only one file named `bcache24.bmc`. 
 
@@ -73,8 +73,8 @@ python3 bmc-tools.py -s ../bcache24.bmc -d ../extracted-bmc -b
 
 We got 575 image files out of the bitmap cache. These files have the `.bmp` extension, a native Windows image format, so we can open this easily in Paint. Other OSes might need access to third party to view them. 
 
-![](ctf/job-interview/image4.png)
-![](ctf/job-interview/image5.png)
+![](/ctf/job-interview/image4.png)
+![](/ctf/job-interview/image5.png)
 
 Articles that might be helpful:
 https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp

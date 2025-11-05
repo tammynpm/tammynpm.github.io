@@ -84,14 +84,14 @@
 <p>First, we need to edit the file format of this file to the correct format which is <code>.tar</code>.</p>
 <p>What happened after I changed this to a <code>.tar</code> archive and extract it?</p>
 <p>Surprise suprise, the output showed that this is not a tar archive</p>
-<p><img src="ctf/job-interview/image1.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/job-interview/image1.png" alt=""></p>
 <p>How could this be? maybe this is not the correct format as well.</p>
 <p>We need to retrieve the raw format of this file.</p>
 <p>One way to do it is to use the commmand-line utility <code>ewfexport</code> from the libewf package.</p>
-<p><img src="ctf/job-interview/image2.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/job-interview/image2.png" alt=""></p>
 <p>During the exporting process, some information is required, such as filename without extension. The file was named as <code>img2</code> as the image above.</p>
 <p>Now that we have the raw file <code>img2.raw</code>, when do the <code>file</code> command again, we get this information:</p>
-<p><img src="ctf/job-interview/image3.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/job-interview/image3.png" alt=""></p>
 <p>This means we are on the right track. After changing the file name to <code>img2.tar</code>, we can extract it using the command <code>tar -xvf img2.tar</code>. Open the extracted folder, we can see there is only one file named <code>bcache24.bmc</code>.</p>
 <p>The <code>.bmc</code> extension indicates this is a bitmap cache.</p>
 <h3 id="what-is-bitmap-cache">What is bitmap cache?</h3>
@@ -111,8 +111,8 @@
 [===] 575 tiles successfully extracted in the end.
 [===] Successfully exported 575 files.
 </code></pre><p>We got 575 image files out of the bitmap cache. These files have the <code>.bmp</code> extension, a native Windows image format, so we can open this easily in Paint. Other OSes might need access to third party to view them.</p>
-<p><img src="ctf/job-interview/image4.png" alt="">
-<img src="ctf/job-interview/image5.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/job-interview/image4.png" alt="">
+<img src="http://localhost:1313/ctf/job-interview/image5.png" alt=""></p>
 <p>Articles that might be helpful:
 <a href="https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp">https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp</a></p>
 <p><a href="https://www.allthingsdfir.com/do-you-even-bitmap-cache-bro/">https://www.allthingsdfir.com/do-you-even-bitmap-cache-bro/</a></p>
