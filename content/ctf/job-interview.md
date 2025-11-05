@@ -38,7 +38,7 @@ One way to do it is to use the commmand-line utility `ewfexport` from the libewf
 
 ![](/ctf/job-interview/image2.png)
 
-During the exporting process, some information is required, such as filename without extension. The file was named as `img2` as the image above. 
+During the exporting process, some information is required, such as filename without extension. The file was named as `img2` as shown in the image above. 
 
 Now that we have the raw file `img2.raw`, when do the `file` command again, we get this information: 
 
@@ -75,6 +75,8 @@ We got 575 image files out of the bitmap cache. These files have the `.bmp` exte
 
 ![](/ctf/job-interview/image4.png)
 ![](/ctf/job-interview/image5.png)
+
+The flag is **Rdp_l3av3s_Trac3S**
 
 Articles that might be helpful:
 https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp
