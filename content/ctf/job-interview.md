@@ -1,8 +1,10 @@
 ---
-title: "Job Interview"
+title: "Job Interview Writeup"
 date: 2025-11-04T22:19:57-05:00
 draft: false
 ---
+# Job Interview Writeup
+
 This is my writeup for `Job Interview` challenge in Forensics category at [root-me.org](https://www.root-me.org/en/Challenges/Forensic/Job-interview)
 
 ## Challenge Summary
