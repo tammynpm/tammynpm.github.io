@@ -66,12 +66,12 @@
 <h2 id="challenge-summary">Challenge Summary</h2>
 <p>Difficulty: 3/5</p>
 <p>Description: <code>We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?</code></p>
-<p><img src="http://localhost:1313/ctf/image.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/osu-forensics/image.png" alt=""></p>
 <h2 id="solve">Solve</h2>
 <p>After extracting the given archive, we see a disk image named <code>SanDisk.E01</code>.</p>
 <p>First of all, we want to see what file system this drive has. One of the tools to do this is The Sleuth Kit, also often used in law enforcement. A little bit about TSK is that it was made by Brian Carrier who created Autopsy, the GUI company to TSK.</p>
 <p>We use the command <a href="https://www.sleuthkit.org/sleuthkit/man/fls.html">fls</a> to list all file and directory names in this disk image.</p>
-<p><img src="http://localhost:1313/ctf/image-1.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/osu-forensisc/image-1.png" alt=""></p>
 <p>An entry of the output of the fls command looks like this</p>
 <p>  <em>file type   metadata address:   file name</em></p>
 <p>The <code>r/r</code> values show the file type. The first <code>r</code> (regular file) is the type as saved in the file&rsquo;s file name structure and the second &lsquo;r&rsquo; is the type as saved in the file&rsquo;s metadata structure.</p>
@@ -81,11 +81,11 @@
 <p>About the numbering of TSK: this is exFAT file system (we know this by using the <a href="https://www.sleuthkit.org/sleuthkit/man/fsstat.html">fsstat</a> command), which doesn&rsquo;t use inode number as in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.</p>
 </blockquote>
 <p>So we see the deleted file. Maybe we should extract it? We can do this using the <a href="https://www.sleuthkit.org/sleuthkit/man/icat.html">icat</a> command in TSK.</p>
-<p><code>icat SanDisk.E01 -o 8202 &gt; recovered.osz</code></p>
+<p><code>icat SanDisk.E01 -o 8202 'sahuang - secret map (hollow) [flag{osu_is_really_fun!}].osu'&gt; recovered.osz</code></p>
 <p>To maintain the original format of the deleted file, we need to keep the <code>.osz</code> extension when carving the data into a new file.</p>
 <p>Using <code>file</code> command, we know that this is a zip archive data, so we change the extension of this file into <code>.zip</code>.</p>
 <p>In the <code>recovered.zip</code> archive, we can see the handwritten flag in the <code>flag.png</code> file.</p>
-<p><img src="http://localhost:1313/ctf/flag.png" alt=""></p>
+<p><img src="http://localhost:1313/ctf/osu-forensics/flag.png" alt=""></p>
 <p>Here is the flag:
 <label class="spoiler-wrapper">
 <span class="spoiler-text"><strong>osu{I_hope_my_h4ndrwr1ting_is_readable_xd}</strong></span>

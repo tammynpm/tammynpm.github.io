@@ -6,14 +6,42 @@
     <description>Recent content in CTFs on tammy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Oct 2025 17:47:52 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 04 Nov 2025 22:19:57 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Job Interview</title>
+      <link>http://localhost:1313/ctf/job-interview/</link>
+      <pubDate>Tue, 04 Nov 2025 22:19:57 -0500</pubDate>
+      <guid>http://localhost:1313/ctf/job-interview/</guid>
+      <description>&lt;p&gt;This is my writeup for &lt;code&gt;Job Interview&lt;/code&gt; challenge in Forensics category in root-me.org&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 35 points&#xA;Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.&#xA;Author: makhno&lt;/p&gt;&#xA;&lt;p&gt;We are given a file named &lt;code&gt;image_forensics.e01&lt;/code&gt; which is a image file format. As usualy, I would do some sanity checks for a disk file like using &lt;code&gt;file&lt;/code&gt; command or some commands in &lt;code&gt;The Sleuth Kit&lt;/code&gt; (TSK).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hacktheboo</title>
+      <link>http://localhost:1313/ctf/hacktheboo/</link>
+      <pubDate>Sun, 26 Oct 2025 03:14:32 -0400</pubDate>
+      <guid>http://localhost:1313/ctf/hacktheboo/</guid>
+      <description>&lt;p&gt;hacktheboo2025 forensics writeup&lt;/p&gt;&#xA;&lt;h1 id=&#34;chall1&#34;&gt;chall1&lt;/h1&gt;&#xA;&lt;p&gt;given:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Osu Forensics Writeup</title>
       <link>http://localhost:1313/ctf/osu-forensics/</link>
       <pubDate>Sat, 25 Oct 2025 17:47:52 -0400</pubDate>
       <guid>http://localhost:1313/ctf/osu-forensics/</guid>
       <description>&lt;h1 id=&#34;osu-forensics-writeup&#34;&gt;Osu Forensics Writeup&lt;/h1&gt;&#xA;&lt;p&gt;This is my writeup for the only forensics challenge &lt;code&gt;map dealer&lt;/code&gt; in &lt;code&gt;osu ctf 2025&lt;/code&gt; on Oct 24, 2025.&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 3/5&lt;/p&gt;&#xA;&lt;p&gt;Description: &lt;code&gt;We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Forensics Tools</title>
+      <link>http://localhost:1313/ctf/forensics-tools/</link>
+      <pubDate>Sat, 04 Oct 2025 20:53:11 -0400</pubDate>
+      <guid>http://localhost:1313/ctf/forensics-tools/</guid>
+      <description>&lt;p&gt;All the tools I&amp;rsquo;ve encountered so far playing Forensics with SavedByTheShell for half a year.&#xA;Forensics are a new field comparing to other subfields in Cybersecurity, but also really broad.&#xA;Listing here are some of the most common open-source/free tools to use in different types of Forensics.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;First, we have file or disk forensics.&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Autopsy&lt;/li&gt;&#xA;&lt;li&gt;The Sleuth Kit&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+    </item>
+    <item>
+      <title>Bsides Foreniscs</title>
+      <link>http://localhost:1313/ctf/bsides-foreniscs/</link>
+      <pubDate>Wed, 24 Sep 2025 19:30:06 -0400</pubDate>
+      <guid>http://localhost:1313/ctf/bsides-foreniscs/</guid>
+      <description>&lt;p&gt;In simple terms, DNS tunneling is a type of attack where hackers embed malicious code into a message that appears to be a normal request.&lt;/p&gt;&#xA;&lt;p&gt;DNS is a protocol that provides conversations between domain names and IP addresses.&lt;/p&gt;&#xA;&lt;p&gt;To visit a website, you need to know the IP address of the server hosting the website.&lt;/p&gt;&#xA;&lt;p&gt;To understand DNS simply, think of when a UMass student needs to go to &lt;code&gt;canvas.umass.edu&lt;/code&gt;. the DNS server needs to ask a &lt;code&gt;.com&lt;/code&gt; DNS server for the IP address of the &lt;code&gt;canvas.umass.edu&lt;/code&gt; DNS server. A second request would provide the I address of the server hosting the desired webpage.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

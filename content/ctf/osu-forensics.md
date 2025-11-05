@@ -14,7 +14,7 @@ Difficulty: 3/5
 Description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
 
 
-![](/ctf/image.png)
+![](/ctf/osu-forensics/image.png)
 
 ## Solve
 
@@ -24,7 +24,7 @@ First of all, we want to see what file system this drive has. One of the tools t
 
 We use the command [fls](https://www.sleuthkit.org/sleuthkit/man/fls.html) to list all file and directory names in this disk image.
 
-![](/ctf/image-1.png)
+![](/ctf/osu-forensisc/image-1.png)
 
 An entry of the output of the fls command looks like this 
 
@@ -49,7 +49,7 @@ Using `file` command, we know that this is a zip archive data, so we change the 
 
 In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png` file. 
 
-![](/ctf/flag.png)
+![](/ctf/osu-forensics/flag.png)
 
 Here is the flag: 
 <label class="spoiler-wrapper">
