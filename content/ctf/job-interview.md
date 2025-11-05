@@ -3,7 +3,7 @@ title: "Job Interview"
 date: 2025-11-04T22:19:57-05:00
 draft: false
 ---
-This is my writeup for `Job Interview` challenge in Forensics category in root-me.org
+This is my writeup for `Job Interview` challenge in Forensics category at [root-me.org](https://www.root-me.org/en/Challenges/Forensic/Job-interview)
 
 ## Challenge Summary
 
