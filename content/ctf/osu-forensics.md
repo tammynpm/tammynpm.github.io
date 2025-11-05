@@ -41,7 +41,7 @@ The asterisk `*` between the file type and the metadata address indicates a dele
 
 So we see the deleted file. Maybe we should extract it? We can do this using the [icat](https://www.sleuthkit.org/sleuthkit/man/icat.html) command in TSK.
 
-`icat SanDisk.E01 -o 8202 > recovered.osz`
+`icat SanDisk.E01 -o 8202 'sahuang - secret map (hollow) [flag{osu_is_really_fun!}].osu'> recovered.osz`
 
 To maintain the original format of the deleted file, we need to keep the `.osz` extension when carving the data into a new file. 
 
