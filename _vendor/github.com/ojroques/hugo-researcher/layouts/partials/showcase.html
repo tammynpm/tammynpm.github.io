@@ -1,0 +1,19 @@
+<section class="showcase">
+    <div class="showcase-inner">
+        <h2>Things I've Made</h2>
+        <ul>
+            {{range first 5 (sort (where .Site.RegularPages "Section" "projects") "Date" "desc")}}
+            <li>
+                <span class="item-date">{{.Date.Format "2000-01" }}:</span>
+                <a href="{{.RelPermalink}}" class="item-link">{{ .Title}}</a>
+                {{ with .Params.subtitle}}
+                <span class="item-desc"> - {{ . }}</span>></span>
+                {{ end }}
+            </li>
+            {{ end }}
+            <li>
+                <a href="{{ 'projects' | relURL }}" class="see-more">See more things</a>
+            </li>
+        </ul>
+    </div>
+</section>
