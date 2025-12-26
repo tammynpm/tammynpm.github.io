@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang=""><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Https</title>
+    <meta name="description" content="tammy&#39;s corner">
+    <meta name="author" content='tammy'>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="http://localhost:1313/sass/researcher.min.css">
+    </head>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="http://localhost:1313/" title="tammy">
+          
+          tammy
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="http://localhost:1313/ctf/" title="CTFs">
+                        CTFs
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="http://localhost:1313/projects/" title="Projects">
+                        Projects
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="http://localhost:1313/napkins/" title="Napkins">
+                        Napkins
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<main class="container mx-auto max-w-prose px-4">
+<section>
+  <nav id="TableOfContents"></nav>
+  <p>to stop all docker containers at once (not include removing)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo docker stop <span class="k">$(</span>sudo docker ps -aq<span class="k">)</span>
+</span></span></code></pre></div><p>to remove all docker containers <code>docker rm $(docker ps -aq)</code></p>
+<p>use Cloud DNS to update the DNS records for <code>umasscybersec.org</code></p>
+<p>The process:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">Add standard 
+</span></span><span class="line"><span class="cl">Domain name: minuteman.umasscybersec.org
+</span></span><span class="line"><span class="cl">Type: A 
+</span></span><span class="line"><span class="cl">IP: [ctfd VM static external IP]
+</span></span><span class="line"><span class="cl">TTL (time to live): 1
+</span></span><span class="line"><span class="cl">unit: second
+</span></span></code></pre></div>
+</section>
+</main>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+
+    </body>
+</html>

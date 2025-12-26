@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>about on tammynpm</title>
     <link>https://tammynpm.github.io/about/</link>
     <description>Recent content in about on tammynpm</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="https://tammynpm.github.io/about/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <title>about on tammy</title>
+    <link>http://localhost:1313/about/</link>
+    <description>Recent content in about on tammy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/main
   </channel>
 </rss>

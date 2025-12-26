@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+<<<<<<< HEAD
     <loc>https://tammynpm.github.io/posts/</loc>
     <lastmod>2025-10-26T23:13:13-04:00</lastmod>
   </url><url>
@@ -25,5 +26,39 @@
     <loc>https://tammynpm.github.io/categories/</loc>
   </url><url>
     <loc>https://tammynpm.github.io/tags/</loc>
+=======
+    <loc>http://localhost:1313/ctf/</loc>
+    <lastmod>2025-11-04T22:19:57-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ctf/job-interview/</loc>
+    <lastmod>2025-11-04T22:19:57-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-11-04T22:19:57-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/napkins/my-challs/</loc>
+    <lastmod>2025-11-03T17:42:21-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/napkins/</loc>
+    <lastmod>2025-11-03T17:42:21-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-10-26T23:13:13-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/ctf/osu-forensics/</loc>
+    <lastmod>2025-10-25T17:47:52-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
+    <lastmod>2025-10-04T20:49:15-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/hello-world/</loc>
+    <lastmod>2025-09-24T18:02:34-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+>>>>>>> origin/main
   </url>
 </urlset>

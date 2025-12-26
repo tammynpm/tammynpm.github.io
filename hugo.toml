@@ -1,6 +1,7 @@
 baseURL = "https://tammynpm.github.io/"
-title = "tammynpm"
+title = "tammy"
 languageCode = "en-us"
+theme = "researcher"
 
 # Theme-specific global toggles
 enableEmoji = true
@@ -21,9 +22,10 @@ canonifyURLs = true
     id = ""
 
 [params]
-  author = "Tammy"
-  description = "Personal site powered by Hugo Researcher"
-  keywords = ["blog", "portfolio", "hugo", "researcher"]
+  author = "tammy"
+  description = "tammy's corner"
+  keywords = ["blog", "portfolio", "writeups", "ctf"]
+  footer_text= "Copyright © 2025 Tammy Nguyen"
 
 [markup]
   [markup.goldmark]
@@ -31,6 +33,10 @@ canonifyURLs = true
       unsafe = true
   [markup.highlight]
     noClasses = false
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 5
+
 
 [menu]
   [[menu.main]]

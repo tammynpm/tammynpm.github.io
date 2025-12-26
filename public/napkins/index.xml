@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>Napkins on tammynpm</title>
     <link>https://tammynpm.github.io/napkins/</link>
     <description>Recent content in Napkins on tammynpm</description>
@@ -8,5 +9,21 @@
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
     <atom:link href="https://tammynpm.github.io/napkins/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <title>Napkins on tammy</title>
+    <link>http://localhost:1313/napkins/</link>
+    <description>Recent content in Napkins on tammy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Nov 2025 17:42:21 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/napkins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Challenges I Made</title>
+      <link>http://localhost:1313/napkins/my-challs/</link>
+      <pubDate>Mon, 03 Nov 2025 17:42:21 -0500</pubDate>
+      <guid>http://localhost:1313/napkins/my-challs/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/tammynpm/my-ctf-challenges#&#34;&gt;https://github.com/tammynpm/my-ctf-challenges#&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+>>>>>>> origin/main
   </channel>
 </rss>

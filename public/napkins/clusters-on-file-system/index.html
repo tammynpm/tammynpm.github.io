@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=""><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Clusters on File Systems</title>
+    <meta name="description" content="tammy&#39;s corner">
+    <meta name="author" content='tammy'>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="http://localhost:1313/sass/researcher.min.css">
+    </head>
+
+    <body><div class="container mt-5">
+    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
+        <a class="navbar-brand mx-0 mr-sm-auto" href="http://localhost:1313/" title="tammy">
+          
+          tammy
+        </a>
+        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+            
+                
+                
+                    <a class="nav-item nav-link" href="http://localhost:1313/ctf/" title="CTFs">
+                        CTFs
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="http://localhost:1313/projects/" title="Projects">
+                        Projects
+                    </a>
+                    
+                        <span class="nav-item navbar-text mx-1">/</span>
+                    
+                
+                    <a class="nav-item nav-link" href="http://localhost:1313/napkins/" title="Napkins">
+                        Napkins
+                    </a>
+                    
+                
+            
+        </div>
+    </nav>
+</div>
+<hr>
+<div id="content">
+<main class="container mx-auto max-w-prose px-4">
+<section>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#guid-lba-and-protective-mbr">GUID, LBA and protective MBR</a></li>
+  </ul>
+</nav>
+  <p>There are many types of file systems (fs). What do we need to know to learn about disk analysis?</p>
+<p>FAT fs has a field that identifies how many sectors are in a cluster, and it must have a value that is a power of 2.</p>
+<p>A Linux tool that is used for partition recovery is <code>gpart</code>.</p>
+<p>The NTFS has 2048-byte clusters and 512-byte sectors.</p>
+<p>All file systems have slack space because all file systems allocate data in multiple-byte chunks instead of in individual bytes. Slack space is considered allocated data, but if you extract the unallocated data from a file system, it should not include the slack space of a file.</p>
+<p>There are two major ways to recover deleted files: metadata-based and application-based.
+Metadata-based recovery works when metadata from the deleted file still exists. In the case it was wiped or reallocated to a new file, then we need to rely on application-based method.</p>
+<p>The OS has a big decision here.</p>
+<p>Most of the time, we can use the metadata to view file contents, search for values, and locate deleted files.</p>
+<p>How does <code>fls</code> work? Why in some case, <code>file</code> can do a better job than <code>fls</code>? Let&rsquo;s dive a little bit in some of the most used The Sleuth Kit (TSK) commands.</p>
+<p>To effectively use <code>fls</code>, we should incorporate <code>mmls</code> at the same time in order to locate the block position of where the MBR is.</p>
+<p>In what way would you need to recover lost things?</p>
+<p>Imagine that you have a 5TB hard disk (HDD) that holds years of your family photos and videos. And one day, when you take it out to connect to a big monitor to see these old photos again, you drop the hard disk on the ground.</p>
+<p>Btw, this actually happened to my dad&rsquo;s HDD that held many photos of his children when they were young.</p>
+<h1 id="guid-lba-and-protective-mbr">GUID, LBA and protective MBR</h1>
+<p>the protective MBR locates at LBA 0 for a bootable disk if the disk has GPT layout.
+Why MBR still exists in GPT? for backward compability.</p>
+<p>you can carve out a file</p>
+
+</section>
+</main>
+
+        </div><div id="footer" class="mb-5">
+    <hr>
+    
+    
+</div>
+
+    </body>
+</html>

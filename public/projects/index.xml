@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>Projects on tammynpm</title>
     <link>https://tammynpm.github.io/projects/</link>
     <description>Recent content in Projects on tammynpm</description>
@@ -8,5 +9,14 @@
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
     <atom:link href="https://tammynpm.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <title>Projects on tammy</title>
+    <link>http://localhost:1313/projects/</link>
+    <description>Recent content in Projects on tammy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+>>>>>>> origin/main
   </channel>
 </rss>

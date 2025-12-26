@@ -4,3 +4,12 @@ path="github.com/ojroques/hugo-researcher"
 
 [params.navigation]
 logo=""
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "assets"
+

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>CTFs on tammynpm</title>
     <link>https://tammynpm.github.io/ctf/</link>
     <description>Recent content in CTFs on tammynpm</description>
@@ -8,5 +9,28 @@
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
     <atom:link href="https://tammynpm.github.io/ctf/index.xml" rel="self" type="application/rss+xml" />
+=======
+    <title>CTFs on tammy</title>
+    <link>http://localhost:1313/ctf/</link>
+    <description>Recent content in CTFs on tammy</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Nov 2025 22:19:57 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Job Interview Writeup</title>
+      <link>http://localhost:1313/ctf/job-interview/</link>
+      <pubDate>Tue, 04 Nov 2025 22:19:57 -0500</pubDate>
+      <guid>http://localhost:1313/ctf/job-interview/</guid>
+      <description>&lt;h1 id=&#34;job-interview-writeup&#34;&gt;Job Interview Writeup&lt;/h1&gt;&#xA;&lt;p&gt;This is my writeup for &lt;code&gt;Job Interview&lt;/code&gt; challenge in Forensics category at &lt;a href=&#34;https://www.root-me.org/en/Challenges/Forensic/Job-interview&#34;&gt;root-me.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 35 points&lt;/p&gt;&#xA;&lt;p&gt;Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.&lt;/p&gt;&#xA;&lt;p&gt;Author: makhno&lt;/p&gt;&#xA;&lt;p&gt;We are given a file named &lt;code&gt;image_forensics.e01&lt;/code&gt; which is a image file format. As usualy, I would do some sanity checks for a disk file like using &lt;code&gt;file&lt;/code&gt; command or some commands in &lt;code&gt;The Sleuth Kit&lt;/code&gt; (TSK).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Osu Forensics Writeup</title>
+      <link>http://localhost:1313/ctf/osu-forensics/</link>
+      <pubDate>Sat, 25 Oct 2025 17:47:52 -0400</pubDate>
+      <guid>http://localhost:1313/ctf/osu-forensics/</guid>
+      <description>&lt;h1 id=&#34;osu-forensics-writeup&#34;&gt;Osu Forensics Writeup&lt;/h1&gt;&#xA;&lt;p&gt;This is my writeup for the only forensics challenge &lt;code&gt;map dealer&lt;/code&gt; in &lt;code&gt;osu ctf 2025&lt;/code&gt; on Oct 24, 2025.&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 3/5&lt;/p&gt;&#xA;&lt;p&gt;Description: &lt;code&gt;We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+>>>>>>> origin/main
   </channel>
 </rss>

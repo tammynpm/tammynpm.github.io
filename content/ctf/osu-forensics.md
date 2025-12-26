@@ -1,36 +1,59 @@
 ---
 title: "Osu Forensics Writeup"
 date: 2025-10-25T17:47:52-04:00
-draft: true
+draft: false
 ---
+# Osu Forensics Writeup
 
 This is my writeup for the only forensics challenge `map dealer` in `osu ctf 2025` on Oct 24, 2025.
 
-We are given an archive `forensics_map-dealer.tar.gz` with this description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
+## Challenge Summary
 
-![](image.png)
+Difficulty: 3/5
+
+Description: `We have confiscated a USB drive from sahuang, whom we were informed was trying to sell a beatmap containing some confidential data of the community to the dark web. However, the beatmap was nowhere to be found from the drive when we mounted it to our computer. Can you help recover it?`
 
 
-## What is The Sleuth Kit?
-The Sleuth Kit (TSK), by Brian Carrier, is a collection of command line tools for disk images analyzing. It is extremely useful when it comes to recovering deleted files, which is the key to solving this challenge. 
+![](/ctf/osu-forensics/image.png)
 
-Some of the common commands that are used in CTFs are `fls, mmls, icat, fsstat, dd`. 
-For this challenge, we only need `fls` and `icat`.
+## Solve
 
-## Data compression
+After extracting the given archive, we see a disk image named `SanDisk.E01`.
 
-`file SanDisk.E01` tells us that this is a disk image. 
+First of all, we want to see what file system this drive has. One of the tools to do this is The Sleuth Kit, also often used in law enforcement. A little bit about TSK is that it was made by Brian Carrier who created Autopsy, the GUI company to TSK.  
 
-First, we want to see what kind of file system does it have. [`fls`](https://www.sleuthkit.org/sleuthkit/man/fls.html) according to the manual, lists file and directory naems in a disk image.
-![](image-1.png)
+We use the command [fls](https://www.sleuthkit.org/sleuthkit/man/fls.html) to list all file and directory names in this disk image.
 
-The asterisk `*` indicates a deleted file. The first thing to do is to get the inode number next to it. It is `8202` for the deleted file `sahuang - secret map.osz` in this case. 
+![](/ctf/osu-forensisc/image-1.png)
 
-[`icat`](https://www.sleuthkit.org/sleuthkit/man/icat.html) outputs the contents of a file given an inode number. We will use this to retrieves the deleted file. 
+An entry of the output of the fls command looks like this 
 
-`icat SanDisk.E01 -o 8202 > recovered.osz`
+&nbsp; *file type &nbsp; metadata address: &nbsp; file name* 
 
-To maintain the original format of the deleted file, we need to keep the `.osz` extension eventhough it looks off. 
+The `r/r` values show the file type. The first `r` (regular file) is the type as saved in the file's file name structure and the second 'r' is the type as saved in the file's metadata structure.
 
-We need to identify what kind of data this is using `file` command. 
+The number part of the entry shows the Metadata Address associated with this name.
+
+The asterisk `*` between the file type and the metadata address indicates a deleted file.
+
+> About the numbering of TSK: this is exFAT file system (we know this by using the [fsstat](https://www.sleuthkit.org/sleuthkit/man/fsstat.html) command), which doesn't use inode number as in Unix style, so TSK calculates these numbers as logical directory entry indices inside the root directory cluster chain.
+
+
+So we see the deleted file. Maybe we should extract it? We can do this using the [icat](https://www.sleuthkit.org/sleuthkit/man/icat.html) command in TSK.
+
+`icat SanDisk.E01 -o 8202 'sahuang - secret map (hollow) [flag{osu_is_really_fun!}].osu'> recovered.osz`
+
+To maintain the original format of the deleted file, we need to keep the `.osz` extension when carving the data into a new file. 
+
+Using `file` command, we know that this is a zip archive data, so we change the extension of this file into `.zip`. 
+
+In the `recovered.zip` archive, we can see the handwritten flag in the `flag.png` file. 
+
+![](/ctf/osu-forensics/flag.png)
+
+Here is the flag: 
+<label class="spoiler-wrapper">
+<span class="spoiler-text">**osu{I_hope_my_h4ndrwr1ting_is_readable_xd}**</span>
+</label>
+
 
