@@ -1,4 +1,4 @@
-# tammynpm.github.io
+hugo # tammynpm.github.io
 
 This is a Hugo site configured for GitHub Pages using the Researcher theme and GitHub Actions to deploy to the `gh-pages` branch.
 

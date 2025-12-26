@@ -1,0 +1,122 @@
+/* Custom styles on top of Tailwind */
+:root {
+  --ring: 0 0% 100%;
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  color: rgb(71 85 105);
+  transition: color 150ms ease;
+}
+.nav-link:hover { color: rgb(15 23 42); }
+.dark .nav-link { color: rgb(203 213 225); }
+.dark .nav-link:hover { color: rgb(255 255 255); }
+
+.section { padding-top: 4rem; padding-bottom: 4rem; }
+@media (min-width: 768px) { .section { padding-top: 6rem; padding-bottom: 6rem; } }
+
+.container { max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 768px) { .section-title { font-size: 1.875rem; } }
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  background-image: linear-gradient(to right, rgb(37 99 235), rgb(147 51 234));
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
+  transition: filter 150ms ease;
+}
+.btn-primary:hover { filter: brightness(1.05); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(100, 116, 139, 0.6);
+  color: rgb(51 65 85);
+}
+.btn-secondary:hover { background-color: rgb(248 250 252); }
+.dark .btn-secondary { border-color: rgb(30 41 59); color: rgb(226 232 240); }
+.dark .btn-secondary:hover { background-color: rgb(2 6 23); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: rgb(71 85 105);
+}
+.btn-ghost:hover { color: rgb(15 23 42); }
+.dark .btn-ghost { color: rgb(203 213 225); }
+.dark .btn-ghost:hover { color: rgb(255 255 255); }
+
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(100, 116, 139, 0.6);
+  background-color: white;
+  padding: 1.25rem;
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
+}
+.dark .card { border-color: rgb(30 41 59); background-color: rgb(15 23 42); }
+
+.card-title { font-size: 1rem; font-weight: 600; }
+
+.skill-list { margin-top: 0.5rem; padding-left: 1.25rem; font-size: 0.875rem; color: rgb(71 85 105); }
+.skill-list li { margin-top: 0.25rem; }
+.dark .skill-list { color: rgb(203 213 225); }
+
+.dot {
+  height: 0.5rem; width: 0.5rem; border-radius: 9999px; background-color: rgb(59 130 246); display: inline-block;
+}
+
+.timeline-dot {
+  position: absolute; inset-inline-start: -0.625rem; margin-top: 0.375rem; height: 0.625rem; width: 0.625rem; border-radius: 9999px; border: 2px solid white; background-color: rgb(37 99 235);
+}
+.dark .timeline-dot { border-color: rgb(2 6 23); }
+
+.timeline-card {
+  border-radius: 0.75rem; border: 1px solid rgba(100,116,139,0.6); background: white; padding: 1rem; box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
+}
+.dark .timeline-card { border-color: rgb(30 41 59); background: rgb(15 23 42); }
+
+.project-card {
+  overflow: hidden; border-radius: 0.75rem; border: 1px solid rgba(100,116,139,0.6); background: white; box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2); display: flex; flex-direction: column;
+}
+.dark .project-card { border-color: rgb(30 41 59); background: rgb(15 23 42); }
+
+.project-media img { height: 10rem; width: 100%; object-fit: cover; }
+
+.project-body { padding: 1.25rem; flex: 1; }
+
+.project-title { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem; }
+
+.project-desc { color: rgb(71 85 105); font-size: 0.875rem; margin-bottom: 1rem; }
+.dark .project-desc { color: rgb(203 213 225); }
+
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.project-tags span { font-size: 0.75rem; color: rgb(59 130 246); background-color: rgb(239 246 255); padding: 0.25rem 0.5rem; border-radius: 0.25rem; }
+.dark .project-tags span { color: rgb(147 197 253); background-color: rgb(30 58 138); }
+
+.post-row {
+  display: flex; align-items: center; justify-content: space-between; padding: 1rem; color: rgb(51 65 85); transition: background-color 150ms ease;
+}
+.post-row:hover { background-color: rgb(248 250 252); }
+.dark .post-row { color: rgb(226 232 240); }
+.dark .post-row:hover { background-color: rgb(2 6 23); }
+
+.post-title { font-weight: 500; }
+
+.post-meta { font-size: 0.875rem; color: rgb(100 116 139); }
+.dark .post-meta { color: rgb(148 163 184); }

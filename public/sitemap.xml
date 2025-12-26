@@ -1,1 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://tammynpm.github.io/posts/hello-world/</loc><lastmod>2025-09-24T18:02:34-04:00</lastmod></url><url><loc>https://tammynpm.github.io/posts/</loc><lastmod>2025-09-24T18:02:34-04:00</lastmod></url><url><loc>https://tammynpm.github.io/</loc><lastmod>2025-09-24T18:02:34-04:00</lastmod></url><url><loc>https://tammynpm.github.io/about/</loc></url><url><loc>https://tammynpm.github.io/categories/</loc></url><url><loc>https://tammynpm.github.io/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://tammynpm.github.io/posts/</loc>
+    <lastmod>2025-10-26T23:13:13-04:00</lastmod>
+  </url><url>
+    <loc>https://tammynpm.github.io/</loc>
+    <lastmod>2025-10-26T23:13:13-04:00</lastmod>
+  </url><url>
+    <loc>https://tammynpm.github.io/ctf/</loc>
+    <lastmod>2025-10-26T03:14:32-04:00</lastmod>
+  </url><url>
+    <loc>https://tammynpm.github.io/projects/</loc>
+    <lastmod>2025-10-04T20:49:15-04:00</lastmod>
+  </url><url>
+    <loc>https://tammynpm.github.io/napkins/</loc>
+    <lastmod>2025-09-30T23:49:23-04:00</lastmod>
+  </url><url>
+    <loc>https://tammynpm.github.io/posts/hello-world/</loc>
+    <lastmod>2025-09-24T18:02:34-04:00</lastmod>
+  </url><url>
+    <loc>https://tammynpm.github.io/about/</loc>
+  </url><url>
+    <loc>https://tammynpm.github.io/categories/</loc>
+  </url><url>
+    <loc>https://tammynpm.github.io/tags/</loc>
+  </url>
+</urlset>
