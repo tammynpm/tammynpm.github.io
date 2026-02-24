@@ -16,8 +16,7 @@ cs major @UMassAmherst
 
 ctf player @SavedByTheShell
 
-infra, SRE, DevOps, networkings
-
+ops but know software
 
 <!-- My current interests lie in Network Security and HomeLabbing.  -->
 
