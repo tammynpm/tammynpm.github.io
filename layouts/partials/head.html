@@ -13,7 +13,7 @@
     {{ $style := resources.Get "sass/researcher.scss" | resources.ExecuteAsTemplate "sass/researcher.scss" . | toCSS | minify -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
-     <link rel="stylesheet" href="/css/gradient.css">
+    <link rel="stylesheet" href="/css/gradient.css">
      
     {{ with .Site.Params.favicon -}}
     <link rel="icon" type="image/ico" href="{{ . | absURL }}">
