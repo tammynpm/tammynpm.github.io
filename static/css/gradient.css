@@ -55,8 +55,10 @@ a:hover {
 
 svg {
     fill: #ffffff;
+    stroke: #ffffff;
+    opacity: 1;
 }
 
-.site-title a {
+.navbar-brand {
     color: #ffffff;
 }
