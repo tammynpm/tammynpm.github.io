@@ -14,10 +14,9 @@ You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spo
 
 hi, my name is Tam, friends also know me as Tammy. I'm a third-year CS major from the University of Massachusetts currently diving deeper into the world of systems. 
 
-In my spare time, I spent most of it with the UMassCybersecurity club where I work mostly as a DevOps and keep things running.
+I spent my spare time with the UMassCybersecurity club where I work mostly as a DevOps and keep things running.
 
 This is my small corner of the Internet where I share things I care about and whatever else happens to be on my mind. 
-
 
 According to ["what vegetable are you?"](https://sophie006liu.github.io/vegetal/#), I'm a [Jalapeno](Jalapeno.png)
 <!-- My current interests lie in Network Security and HomeLabbing.  -->
@@ -62,9 +61,9 @@ I sort my favorite languages by how much I like using them:
 
 <div style="display: flex; gap:16px; align-items: center;">
     <a href="https://github.com/tammynpm" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" width="24" height="24" alt="GitHub">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg?color=white" width="24" height="24" alt="GitHub">
     </a>
     <a href="https://www.linkedin.com/in/tammy-pm-nguyen" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" width="24" height="24" alt="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg?color=white" width="24" height="24" alt="LinkedIn">
     </a>
 </div>
