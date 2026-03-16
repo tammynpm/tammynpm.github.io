@@ -5,10 +5,10 @@
 
   background: linear-gradient(
     -45deg,
-    #13293d,
-    #0b2238,
-    #06182a,
-    #020b13
+    #152331,
+    #0b1621,
+    #020608,
+    #000000
   );
 
   background-size: 400% 400%;
@@ -30,14 +30,18 @@
 }
 
 body {
-    color: #e6edf3;
+    color: #f8fafc;
 }
 
 h1, h2, h3 {
     color: #ffffff;
 }
 
-a{
+h1 {
+    text-shadow: 0 0 12px rgba(255,255,255,0.15);
+}
+
+a {
     color: #60a5fa;
 }
 
