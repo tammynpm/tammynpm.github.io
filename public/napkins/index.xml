@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
-    <title>Napkins on tammynpm</title>
-    <link>https://tammynpm.github.io/napkins/</link>
-    <description>Recent content in Napkins on tammynpm</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://tammynpm.github.io/napkins/index.xml" rel="self" type="application/rss+xml" />
-=======
     <title>Napkins on tammy</title>
     <link>http://localhost:1313/napkins/</link>
     <description>Recent content in Napkins on tammy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Nov 2025 17:42:21 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 28 Dec 2025 18:37:54 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/napkins/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Challenges I Made</title>
+      <title>Fixing Open Browser on Burpsuite</title>
+      <link>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</link>
+      <pubDate>Sun, 28 Dec 2025 18:37:54 -0500</pubDate>
+      <guid>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</guid>
+      <description>&lt;p&gt;Sharing a helpful fix for the Ubuntu 24.04 error with BurpSuite from Web-Pentester Anthony Hanel&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://anthonyhanel.me/posts/Fixing-Burp-Suite&#39;s-Default-Browser-Ubuntu-24.04/&#34;&gt;https://anthonyhanel.me/posts/Fixing-Burp-Suite&#39;s-Default-Browser-Ubuntu-24.04/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tailscale Fix</title>
+      <link>http://localhost:1313/napkins/tailscale-fix/</link>
+      <pubDate>Thu, 25 Dec 2025 20:18:51 -0500</pubDate>
+      <guid>http://localhost:1313/napkins/tailscale-fix/</guid>
+      <description>&lt;h1 id=&#34;debugging-proxmox-enterprise-apt-repositories&#34;&gt;Debugging Proxmox enterprise APT repositories&lt;/h1&gt;&#xA;&lt;p&gt;Issue:&lt;/p&gt;&#xA;&lt;p&gt;When we install Proxmox VE, the installer always enables the enterprise repo. This enterprise version requires a paid subscription token if we want to use the &lt;code&gt;apt&lt;/code&gt; packager manager. Hence, we will use the community APT repo.&lt;/p&gt;&#xA;&lt;p&gt;First we need to edit two files:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/apt/sources.list.d/pve-enterprise.sources/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/apt/sources.list.d/ceph.list/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We append the line &lt;code&gt;Enabled: no&lt;/code&gt; at the end of those files.&lt;/p&gt;&#xA;&lt;p&gt;Then &lt;code&gt;sudo apt update&lt;/code&gt; again.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>CTF Challenges I Created</title>
       <link>http://localhost:1313/napkins/my-challs/</link>
       <pubDate>Mon, 03 Nov 2025 17:42:21 -0500</pubDate>
       <guid>http://localhost:1313/napkins/my-challs/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://github.com/tammynpm/my-ctf-challenges#&#34;&gt;https://github.com/tammynpm/my-ctf-challenges#&lt;/a&gt;&lt;/p&gt;</description>
     </item>
->>>>>>> origin/main
   </channel>
 </rss>

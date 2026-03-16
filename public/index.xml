@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
-    <title>Welcome on tammynpm</title>
-    <link>https://tammynpm.github.io/</link>
-    <description>Recent content in Welcome on tammynpm</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 24 Sep 2025 18:02:34 -0400</lastBuildDate>
-    <atom:link href="https://tammynpm.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello World</title>
-      <link>https://tammynpm.github.io/posts/hello-world/</link>
-      <pubDate>Wed, 24 Sep 2025 18:02:34 -0400</pubDate>
-      <guid>https://tammynpm.github.io/posts/hello-world/</guid>
-=======
     <title>Welcome on tammy</title>
     <link>http://localhost:1313/</link>
     <description>Recent content in Welcome on tammy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Nov 2025 22:19:57 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 28 Dec 2025 18:37:54 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fixing Open Browser on Burpsuite</title>
+      <link>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</link>
+      <pubDate>Sun, 28 Dec 2025 18:37:54 -0500</pubDate>
+      <guid>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</guid>
+      <description>&lt;p&gt;Sharing a helpful fix for the Ubuntu 24.04 error with BurpSuite from Web-Pentester Anthony Hanel&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://anthonyhanel.me/posts/Fixing-Burp-Suite&#39;s-Default-Browser-Ubuntu-24.04/&#34;&gt;https://anthonyhanel.me/posts/Fixing-Burp-Suite&#39;s-Default-Browser-Ubuntu-24.04/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Tailscale Fix</title>
+      <link>http://localhost:1313/napkins/tailscale-fix/</link>
+      <pubDate>Thu, 25 Dec 2025 20:18:51 -0500</pubDate>
+      <guid>http://localhost:1313/napkins/tailscale-fix/</guid>
+      <description>&lt;h1 id=&#34;debugging-proxmox-enterprise-apt-repositories&#34;&gt;Debugging Proxmox enterprise APT repositories&lt;/h1&gt;&#xA;&lt;p&gt;Issue:&lt;/p&gt;&#xA;&lt;p&gt;When we install Proxmox VE, the installer always enables the enterprise repo. This enterprise version requires a paid subscription token if we want to use the &lt;code&gt;apt&lt;/code&gt; packager manager. Hence, we will use the community APT repo.&lt;/p&gt;&#xA;&lt;p&gt;First we need to edit two files:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/apt/sources.list.d/pve-enterprise.sources/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano /etc/apt/sources.list.d/ceph.list/&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;We append the line &lt;code&gt;Enabled: no&lt;/code&gt; at the end of those files.&lt;/p&gt;&#xA;&lt;p&gt;Then &lt;code&gt;sudo apt update&lt;/code&gt; again.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Job Interview Writeup</title>
       <link>http://localhost:1313/ctf/job-interview/</link>
       <pubDate>Tue, 04 Nov 2025 22:19:57 -0500</pubDate>
       <guid>http://localhost:1313/ctf/job-interview/</guid>
-      <description>&lt;h1 id=&#34;job-interview-writeup&#34;&gt;Job Interview Writeup&lt;/h1&gt;&#xA;&lt;p&gt;This is my writeup for &lt;code&gt;Job Interview&lt;/code&gt; challenge in Forensics category at &lt;a href=&#34;https://www.root-me.org/en/Challenges/Forensic/Job-interview&#34;&gt;root-me.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 35 points&lt;/p&gt;&#xA;&lt;p&gt;Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.&lt;/p&gt;&#xA;&lt;p&gt;Author: makhno&lt;/p&gt;&#xA;&lt;p&gt;We are given a file named &lt;code&gt;image_forensics.e01&lt;/code&gt; which is a image file format. As usualy, I would do some sanity checks for a disk file like using &lt;code&gt;file&lt;/code&gt; command or some commands in &lt;code&gt;The Sleuth Kit&lt;/code&gt; (TSK).&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;job-interview-writeup&#34;&gt;Job Interview Writeup&lt;/h1&gt;&#xA;&lt;p&gt;This is my writeup for &lt;code&gt;Job Interview&lt;/code&gt; challenge in Forensics category at &lt;a href=&#34;https://www.root-me.org/en/Challenges/Forensic/Job-interview&#34;&gt;root-me.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-summary&#34;&gt;Challenge Summary&lt;/h2&gt;&#xA;&lt;p&gt;Difficulty: 35 points&lt;/p&gt;&#xA;&lt;p&gt;Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.&lt;/p&gt;&#xA;&lt;p&gt;Author: makhno&lt;/p&gt;&#xA;&lt;h2 id=&#34;solving-the-challenge&#34;&gt;Solving the challenge&lt;/h2&gt;&#xA;&lt;h3 id=&#34;sanity-checks&#34;&gt;Sanity checks&lt;/h3&gt;&#xA;&lt;p&gt;We are given a file named &lt;code&gt;image_forensics.e01&lt;/code&gt; which is a image file format. As usualy, I would do some sanity checks for a disk file like using &lt;code&gt;file&lt;/code&gt; command or some commands in &lt;code&gt;The Sleuth Kit&lt;/code&gt; (TSK).&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Challenges I Made</title>
+      <title>CTF Challenges I Created</title>
       <link>http://localhost:1313/napkins/my-challs/</link>
       <pubDate>Mon, 03 Nov 2025 17:42:21 -0500</pubDate>
       <guid>http://localhost:1313/napkins/my-challs/</guid>
@@ -48,7 +48,6 @@
       <link>http://localhost:1313/posts/hello-world/</link>
       <pubDate>Wed, 24 Sep 2025 18:02:34 -0400</pubDate>
       <guid>http://localhost:1313/posts/hello-world/</guid>
->>>>>>> origin/main
       <description>&lt;!-- Welcome to your new Hugo site deployed with GitHub Pages and PaperMod!&#xA;&#xA;You can edit this post at `content/posts/hello-world.md` or create more posts in the same folder.&#xA; --&gt;&#xA;&lt;p&gt;under construction&lt;/p&gt;</description>
     </item>
   </channel>

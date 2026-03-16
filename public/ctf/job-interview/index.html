@@ -6,7 +6,7 @@
     <title>Job Interview Writeup</title>
     <meta name="description" content="tammy&#39;s corner">
     <meta name="author" content='tammy'>
-
+    <link rel="stylesheet" href="http://localhost:1313/css/gradient.css">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="http://localhost:1313/sass/researcher.min.css">
     </head>
 
-    <body><div class="container mt-5">
+  <body>
+    <div class="animated-bg"></div><div class="container mt-5">
     <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
         <a class="navbar-brand mx-0 mr-sm-auto" href="http://localhost:1313/" title="tammy">
           
@@ -26,13 +27,6 @@
                 
                     <a class="nav-item nav-link" href="http://localhost:1313/ctf/" title="CTFs">
                         CTFs
-                    </a>
-                    
-                        <span class="nav-item navbar-text mx-1">/</span>
-                    
-                
-                    <a class="nav-item nav-link" href="http://localhost:1313/projects/" title="Projects">
-                        Projects
                     </a>
                     
                         <span class="nav-item navbar-text mx-1">/</span>
@@ -77,10 +71,10 @@
 <p>Difficulty: 35 points</p>
 <p>Description: You are invited to an interview for a forensics investigator position at the NSA. For your first technical evaluation they ask you to analyze this file. Prove to them that you’re a fitting candidate for this job.</p>
 <p>Author: makhno</p>
-<p>We are given a file named <code>image_forensics.e01</code> which is a image file format. As usualy, I would do some sanity checks for a disk file like using <code>file</code> command or some commands in <code>The Sleuth Kit</code> (TSK).</p>
-<p>In this case, when do the command <code>fls</code> to look for file system, we are left with a result <code>Unsupported image file type (Tar Archive)</code>. Why is a disk image archived?</p>
 <h2 id="solving-the-challenge">Solving the challenge</h2>
 <h3 id="sanity-checks">Sanity checks</h3>
+<p>We are given a file named <code>image_forensics.e01</code> which is a image file format. As usualy, I would do some sanity checks for a disk file like using <code>file</code> command or some commands in <code>The Sleuth Kit</code> (TSK).</p>
+<p>In this case, when do the command <code>fls</code> to look for file system, we are left with a result <code>Unsupported image file type (Tar Archive)</code>. Why is a disk image archived?</p>
 <p>First, we need to edit the file format of this file to the correct format which is <code>.tar</code>.</p>
 <p>What happened after I changed this to a <code>.tar</code> archive and extract it?</p>
 <p>Surprise suprise, the output showed that this is not a tar archive</p>
@@ -89,7 +83,7 @@
 <p>We need to retrieve the raw format of this file.</p>
 <p>One way to do it is to use the commmand-line utility <code>ewfexport</code> from the libewf package.</p>
 <p><img src="http://localhost:1313/ctf/job-interview/image2.png" alt=""></p>
-<p>During the exporting process, some information is required, such as filename without extension. The file was named as <code>img2</code> as the image above.</p>
+<p>During the exporting process, some information is required, such as filename without extension. The file was named as <code>img2</code> as shown in the image above.</p>
 <p>Now that we have the raw file <code>img2.raw</code>, when do the <code>file</code> command again, we get this information:</p>
 <p><img src="http://localhost:1313/ctf/job-interview/image3.png" alt=""></p>
 <p>This means we are on the right track. After changing the file name to <code>img2.tar</code>, we can extract it using the command <code>tar -xvf img2.tar</code>. Open the extracted folder, we can see there is only one file named <code>bcache24.bmc</code>.</p>
@@ -113,6 +107,7 @@
 </code></pre><p>We got 575 image files out of the bitmap cache. These files have the <code>.bmp</code> extension, a native Windows image format, so we can open this easily in Paint. Other OSes might need access to third party to view them.</p>
 <p><img src="http://localhost:1313/ctf/job-interview/image4.png" alt="">
 <img src="http://localhost:1313/ctf/job-interview/image5.png" alt=""></p>
+<p>The flag is <strong>Rdp_l3av3s_Trac3S</strong></p>
 <p>Articles that might be helpful:
 <a href="https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp">https://www.cyberark.com/resources/threat-research-blog/explain-like-i-m-5-remote-desktop-protocol-rdp</a></p>
 <p><a href="https://www.allthingsdfir.com/do-you-even-bitmap-cache-bro/">https://www.allthingsdfir.com/do-you-even-bitmap-cache-bro/</a></p>
@@ -120,11 +115,11 @@
 </section>
 </main>
 
-        </div><div id="footer" class="mb-5">
+    </div><div id="footer" class="mb-5">
     <hr>
     
     
 </div>
 
-    </body>
+  </body>
 </html>
