@@ -5,10 +5,10 @@
 
   background: linear-gradient(
     -45deg,
-    #0f2027,
-    #203a43,
-    #2c5364,
-    #1a1a2e
+    #13293d,
+    #0b2238,
+    #06182a,
+    #020b13
   );
 
   background-size: 400% 400%;
@@ -27,4 +27,20 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+body {
+    color: #f1f5f9;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+a{
+    color: #60a5fa;
+}
+
+a:hover {
+    color: #93c5fd;
 }
