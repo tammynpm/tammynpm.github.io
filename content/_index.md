@@ -12,11 +12,11 @@ My superpower is killing the mood. My sense of humor is a bit dry, so if I say s
 
 You can find me on [Linkedin](https://www.linkedin.com/in/tammy-pm-nguyen/), Spotify, and [GitHub](https://github.com/tammynpm).  -->
 
-cs major @UMassAmherst
+hi, my name is Tam, friends also know me as Tammy. I'm a third-year CS major from the University of Massachusetts currently diving deeper into the world of systems. 
 
-ctf player @SavedByTheShell
+In my spare time, I spent majority of it with the UMassCybersecurity club where I work mostly as a DevOps which sparked my passion for Linux and Computer Networkings.
 
-ops but know software
+This is my small corner of the Internet where I share things I care about and whatever else happens to be on my mind. 
 
 <!-- My current interests lie in Network Security and HomeLabbing.  -->
 
