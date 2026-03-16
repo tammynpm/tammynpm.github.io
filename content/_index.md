@@ -18,6 +18,8 @@ In my spare time, I spent majority of it with the UMassCybersecurity club where 
 
 This is my small corner of the Internet where I share things I care about and whatever else happens to be on my mind. 
 
+
+According to ["what vegetable are you?"](https://sophie006liu.github.io/vegetal/#), I'm a [Jalapeno](Jalapeno.png)
 <!-- My current interests lie in Network Security and HomeLabbing.  -->
 
 <!-- # Hobbies and interests
