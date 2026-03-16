@@ -53,12 +53,23 @@ a:hover {
     color: #ff9c9c;
 }
 
+a.navbar-brand {
+  color: #e6edf3;
+}
+
+a.navbar-brand:hover {
+  color: #ffffff;
+}
+
 svg {
     fill: #ffffff;
     stroke: #ffffff;
     opacity: 1;
 }
 
-.navbar-brand {
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:visited {
     color: #ffffff;
 }
