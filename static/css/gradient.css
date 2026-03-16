@@ -56,3 +56,7 @@ a:hover {
 svg {
     fill: #e6edf3;
 }
+
+.site-title a {
+    color: #e6edf3;
+}
