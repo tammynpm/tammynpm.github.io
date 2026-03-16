@@ -61,9 +61,9 @@ I sort my favorite languages by how much I like using them:
 
 <div style="display: flex; gap:16px; align-items: center;">
     <a href="https://github.com/tammynpm" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg?color=white" width="24" height="24" alt="GitHub">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" width="24" height="24" alt="GitHub">
     </a>
     <a href="https://www.linkedin.com/in/tammy-pm-nguyen" target="_blank" rel="noopener noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg?color=white" width="24" height="24" alt="LinkedIn">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" width="24" height="24" alt="LinkedIn">
     </a>
 </div>

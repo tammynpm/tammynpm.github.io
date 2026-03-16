@@ -73,3 +73,9 @@ svg {
 .navbar-brand:visited {
     color: #ffffff;
 }
+
+
+img[src*="simple-icons"]:hover{
+  transform: scale(1.1);
+  filter: invert(1) brightness(1.1);
+}
