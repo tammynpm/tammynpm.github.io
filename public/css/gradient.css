@@ -5,10 +5,10 @@
 
   background: linear-gradient(
     -45deg,
-    #051937,
-    #004d7a,
-    #008793,
-    #00bf72
+    #152331,
+    #0b1621,
+    #020608,
+    #000000
   );
 
   background-size: 400% 400%;
@@ -27,6 +27,14 @@
   100% {
     background-position: 0% 50%;
   }
+}
+
+.accent-text {
+  background: linear-gradient(45deg, #ff6b6b, #ff9c9c);
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px;
 }
 
 body {
