@@ -5,10 +5,10 @@
 
   background: linear-gradient(
     -45deg,
-    #152331,
-    #0b1621,
-    #020608,
-    #000000
+    #051937,
+    #004d7a,
+    #008793,
+    #00bf72
   );
 
   background-size: 400% 400%;
@@ -53,12 +53,29 @@ a:hover {
     color: #ff9c9c;
 }
 
+a.navbar-brand {
+  color: #e6edf3;
+}
+
+a.navbar-brand:hover {
+  color: #e6edf3;
+}
+
 svg {
     fill: #ffffff;
     stroke: #ffffff;
     opacity: 1;
 }
 
-.navbar-brand {
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:visited {
     color: #ffffff;
+}
+
+
+img[src*="simple-icons"]:hover{
+  transform: scale(1.1);
+  filter: invert(1) brightness(1.1);
 }
