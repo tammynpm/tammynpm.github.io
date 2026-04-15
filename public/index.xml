@@ -6,8 +6,15 @@
     <description>Recent content in Welcome on tammy</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Dec 2025 18:37:54 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 02:20:05 -0400</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Funny Network Protocols</title>
+      <link>http://localhost:1313/napkins/funny-network-protocols/</link>
+      <pubDate>Wed, 15 Apr 2026 02:20:05 -0400</pubDate>
+      <guid>http://localhost:1313/napkins/funny-network-protocols/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m doing a side quest to find weird but useful network protocols.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Finger protocol. It used to be more popular decades ago. A finger command returns information about a user, including their login name, name, home directory, phone numbers, last seen, and other details. In 2020, Windows &amp;ldquo;finger&amp;rdquo; was used as living-off-the-land binaries (LOLBins) to retrieve information about users on remote computers running the Finger service or daemon. &lt;a href=&#34;https://www.bleepingcomputer.com/news/security/windows-10-finger-command-can-be-abused-to-download-or-steal-files/&#34;&gt;&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Character Generator Protocol aka CHARGEN. A standard for the ARPA Internet community.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Collection of jokes:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Fixing Open Browser on Burpsuite</title>
       <link>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</link>

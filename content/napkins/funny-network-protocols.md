@@ -12,7 +12,11 @@ I'm doing a side quest to find weird but useful network protocols.
 
 Collection of jokes:
 > You know the thing about NTP jokes? It's all about the timing! 
+
 > An IPv4 address walks into the bar and yells, "Bartender! Give me a cider, I'm exhausted!" 
-> What's a netsec's favourite mayonnaise? Diffie-Hellmans! 
+
+> What's a netsec's favourite mayonnaise? Diffie-Hellmans!
+
 > Old MacDonald had a network - E-I-G-R-P 
+
 > What's DHCP Discovery port? six-sevenn
