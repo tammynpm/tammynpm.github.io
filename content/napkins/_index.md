@@ -1,5 +1,0 @@
----
-title: "Napkins"
-draft: false
----
-

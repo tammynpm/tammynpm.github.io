@@ -47,10 +47,6 @@ canonifyURLs = true
     name = "CTFs"
     url = "/ctf/"
     weight = 3
-  [[menu.main]]
-    name = "Napkins"
-    url = "/napkins/"
-    weight = 5
 
 [security]
   allowContent = ['.*']
