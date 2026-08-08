@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>CTFs</title>
+    <title>Joining Proxmox Cluster</title>
     <meta name="description" content="tammy&#39;s corner">
     <meta name="author" content='tammy'>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
 
     <link rel="stylesheet" href="http://localhost:1313/css/gradient.css">
      
-    <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/ctf/index.xml" title="tammy" />
     </head>
 
   <body>
@@ -47,24 +46,24 @@
 </div>
 <hr>
 <div id="content">
-<div class="container">
-    <h1>CTFs</h1>
-    <ul>
-        
-            <li><a href="http://localhost:1313/ctf/nfs-wireshark/">2025-11-05 | Nfs Wireshark</a></li>
-        
-            <li><a href="http://localhost:1313/ctf/job-interview/">2025-11-04 | Job Interview Writeup</a></li>
-        
-            <li><a href="http://localhost:1313/ctf/hacktheboo/">2025-10-26 | Hacktheboo</a></li>
-        
-            <li><a href="http://localhost:1313/ctf/osu-forensics/">2025-10-25 | Osu Forensics Writeup</a></li>
-        
-            <li><a href="http://localhost:1313/ctf/forensics-tools/">2025-10-04 | Forensics Tools</a></li>
-        
-            <li><a href="http://localhost:1313/ctf/bsides-foreniscs/">2025-09-24 | Bsides Foreniscs</a></li>
-        
-    </ul>
-</div>
+<main class="container mx-auto max-w-prose px-4">
+<section>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#joining-proxmox-cluster">Joining Proxmox Cluster</a></li>
+  </ul>
+</nav>
+  <h1 id="joining-proxmox-cluster">Joining Proxmox Cluster</h1>
+<p>This weekend, I&rsquo;m hitting the limit of my testing infrastructure. My set up was very humble. A Dell mini tower Micro Optiplex 7050 with only 16GB RAM and 256GB SSD. I mean, in this economy &lt;sigh&gt;. Luckily, I have an old laptop lying around and the next thought was creating a cluster of Proxmox. Proxmox is no stranger to homelabbers for its uses in hosting VMs and containers.</p>
+<p>Before joining the nodes, make sure they are time synced. Try to ping each other to check for connectivity.</p>
+<p>To join a cluster, we need a cluster. First, make sure you have a cluster created from an existing node. To do this, go to <code>Datacenter &gt; Cluster &gt; Create Cluster</code>.</p>
+<p><img src="images/2026-08-07-23-01-34.png" alt="fig1"></p>
+<p>Copy the Joining Information from the existing node. Then visit the web UI of the new node. Go to <code>Datacenter &gt; Cluster &gt; Join Cluster</code> and paste the Joining Information. The node will need a reboot. After a minute, or 2, check on the node to see if it joined the cluster with this command <code>systemctl status pve-cluster corosync</code>. If the new node shows OK then the join succeeded, the web UI may need to be refreshed.</p>
+<p>On etiher node, run: <code>pvecm status</code> and you&rsquo;re expected to see results like this:</p>
+<p><img src="images/2026-08-07-23-16-39.png" alt="fig2"></p>
+
+</section>
+</main>
 
     </div><div id="footer" class="mb-5">
     <hr>

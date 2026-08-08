@@ -1,30 +1,35 @@
-
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/joining-proxmox-cluster/</loc>
+    <lastmod>2026-08-07T22:21:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-08-07T22:21:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-08-07T22:21:24-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/installing-arial-on-arch/</loc>
+    <lastmod>2026-06-23T13:28:58-04:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/ai-security/</loc>
     <lastmod>2026-04-26T17:32:56-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/self-hosted-rocket-chat/</loc>
     <lastmod>2026-04-26T17:32:56-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-04-26T17:32:56-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/</loc>
+    <loc>http://localhost:1313/posts/side-channels/</loc>
     <lastmod>2026-04-17T19:34:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/napkins/side-channels/</loc>
-    <lastmod>2026-04-17T19:34:15-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/funny-network-protocols/</loc>
+    <loc>http://localhost:1313/posts/funny-network-protocols/</loc>
     <lastmod>2026-04-15T02:20:05-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</loc>
+    <loc>http://localhost:1313/posts/fixing-open-browser-on-burpsuite/</loc>
     <lastmod>2025-12-28T18:37:54-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/napkins/tailscale-fix/</loc>
+    <loc>http://localhost:1313/posts/tailscale-fix/</loc>
     <lastmod>2025-12-25T20:18:51-05:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ctf/</loc>
@@ -35,18 +40,6 @@
   </url><url>
     <loc>http://localhost:1313/ctf/job-interview/</loc>
     <lastmod>2025-11-04T22:19:57-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/my-challs/</loc>
-    <lastmod>2025-11-03T17:42:21-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/terraforms-proxmox/</loc>
-    <lastmod>2025-10-31T22:42:07-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/git-tracking/</loc>
-    <lastmod>2025-10-31T20:11:15-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-10-26T23:13:13-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ctf/hacktheboo/</loc>
     <lastmod>2025-10-26T03:14:32-04:00</lastmod>
@@ -66,14 +59,8 @@
     <loc>http://localhost:1313/projects/</loc>
     <lastmod>2025-10-04T20:49:15-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/napkins/https/</loc>
-    <lastmod>2025-09-30T23:49:23-04:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/clusters-on-file-system/</loc>
+    <loc>http://localhost:1313/posts/clusters-on-file-system/</loc>
     <lastmod>2025-09-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/napkins/mistake/</loc>
-    <lastmod>2025-09-28T19:03:57-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/ctf/bsides-foreniscs/</loc>
     <lastmod>2025-09-24T19:30:06-04:00</lastmod>

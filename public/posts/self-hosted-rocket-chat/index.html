@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Self-hosted Rocket-chat</title>
+    <title>Details on Self-hosting Rocket-chat on an Alpine LXC</title>
     <meta name="description" content="tammy&#39;s corner">
     <meta name="author" content='tammy'>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
@@ -28,15 +28,15 @@
             
                 
                 
-                    <a class="nav-item nav-link" href="http://localhost:1313/ctf/" title="CTFs">
-                        CTFs
+                    <a class="nav-item nav-link" href="http://localhost:1313/posts/" title="Posts">
+                        Posts
                     </a>
                     
                         <span class="nav-item navbar-text mx-1">/</span>
                     
                 
-                    <a class="nav-item nav-link" href="http://localhost:1313/napkins/" title="Napkins">
-                        Napkins
+                    <a class="nav-item nav-link" href="http://localhost:1313/ctf/" title="CTFs">
+                        CTFs
                     </a>
                     
                 
@@ -48,8 +48,50 @@
 <div id="content">
 <main class="container mx-auto max-w-prose px-4">
 <section>
-  <nav id="TableOfContents"></nav>
-  <p><img src="http://localhost:1313/static/posts/rocket-chat/rocket-chat-main.png" alt=""></p>
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#installing-gitea-on-an-alpine-lxc">Installing gitea on an Alpine LXC</a>
+          <ul>
+            <li><a href="#prepare-database">Prepare Database</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  <p>Hosting rocket-chat
+<img src="http://localhost:1313/posts/rocket-chat/rocket-chat-main.png" alt=""></p>
+<h2 id="installing-gitea-on-an-alpine-lxc">Installing gitea on an Alpine LXC</h2>
+<p>install Git, wget</p>
+<h3 id="prepare-database">Prepare Database</h3>
+<p>Gitea has its own internal database client using an ORM library called XORM. Through this layer, Gitea can natively communicate with several database <a href="https://docs.gitea.com/installation/database-prep">backends</a>.</p>
+<p>Here I&rsquo;m going to install MariaDB server on another Alpine LXC.</p>
+<p>create a system user on Alpine is a tad different than Debian or RHEL</p>
+<pre tabindex="0"><code>adduser -S --shell /bin/bash --gecos &#39;Git Version Control&#39; --disabled-password --home /home
+/git git
+</code></pre><p>Run gitea as a service.
+A service on Alpine is created using Alpine&rsquo;s init system called OpenRC instead of systemd. OpenRC services&rsquo; scripts locate in <code>/etc/init.d/</code> directory. An OpenRC script looks like this <img src="http://localhost:1313/posts/rocket-chat/openrc-script-example.png" alt=""></p>
+<p>The script that is provided in the official repo is for systemd which cannot be applied in this case. I found a nice <a href="http://openrc.run/">website</a> that helps you convert systemd to OpenRC service. The result is:</p>
+<pre tabindex="0"><code>#!/sbin/openrc-run
+
+name=$RC_SVCNAME
+description=&#34;Gitea (Git with a cup of tea)&#34;
+supervisor=&#34;supervise-daemon&#34;
+command=&#34;/usr/local/bin/gitea&#34;
+command_args=&#34;web --config /etc/gitea/app.ini&#34;
+supervise_daemon_args=&#34; -d /var/lib/gitea/ -e USER=\&#34;git\&#34; -e HOME=\&#34;/home/git\&#34; -e GITEA_WORK_DIR=\&#34;/var/lib/gitea\&#34;&#34;
+command_user=&#34;git:git&#34;
+
+depend() {
+	after net 
+}
+</code></pre><p>Make the script executable, enable, and start the service.
+Add gitea to the default services: <code>rc-update add gitea default</code>
+Start gitea service: <code>rc-service gitea start</code>
+Check service status: <code>rc-service gitea status</code></p>
+<p>Access the LXC at port 3000 <img src="http://localhost:1313/posts/rocket-chat/gitea-main.png" alt=""></p>
 
 </section>
 </main>
