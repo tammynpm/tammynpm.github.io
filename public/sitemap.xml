@@ -1,14 +1,24 @@
+
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/napkins/funny-network-protocols/</loc>
-    <lastmod>2026-04-15T02:20:05-04:00</lastmod>
+    <loc>http://localhost:1313/posts/ai-security/</loc>
+    <lastmod>2026-04-26T17:32:56-04:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/napkins/</loc>
-    <lastmod>2026-04-15T02:20:05-04:00</lastmod>
+    <loc>http://localhost:1313/posts/self-hosted-rocket-chat/</loc>
+    <lastmod>2026-04-26T17:32:56-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2026-04-26T17:32:56-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/napkins/</loc>
+    <lastmod>2026-04-17T19:34:15-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/napkins/side-channels/</loc>
+    <lastmod>2026-04-17T19:34:15-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/napkins/funny-network-protocols/</loc>
     <lastmod>2026-04-15T02:20:05-04:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/napkins/fixing-open-browser-on-burpsuite/</loc>

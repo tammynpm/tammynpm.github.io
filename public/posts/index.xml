@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on tammy</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on tammy</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 24 Sep 2025 18:02:34 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
-      <pubDate>Wed, 24 Sep 2025 18:02:34 -0400</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>&lt;!-- Welcome to your new Hugo site deployed with GitHub Pages and PaperMod!&#xA;&#xA;You can edit this post at `content/posts/hello-world.md` or create more posts in the same folder.&#xA; --&gt;&#xA;&lt;p&gt;under construction&lt;/p&gt;</description>
-    </item>
-  </channel>
+	<channel>
+		<title>Posts on tammy</title>
+		<link>http://localhost:1313/posts/</link>
+		<description>Recent content in Posts on tammy</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 26 Apr 2026 17:32:56 -0400</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI Security</title>
+				<link>http://localhost:1313/posts/ai-security/</link>
+				<pubDate>Sun, 26 Apr 2026 17:32:56 -0400</pubDate>
+				<guid>http://localhost:1313/posts/ai-security/</guid>
+				<description>&lt;p&gt;Yes, I know in this era, everyone focuses on AI security because everyone and their grandma uses AI. Yes, I am not pro-AI. But what about the other areas of security? Binary exploitation, embedded security. All the lower levels that are not the hype right now. Which leads to the question: do people care more about the high-level like software, applications because they&amp;rsquo;re easier? sexier? or have more attention as the result of more people know about them?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hello World</title>
+				<link>http://localhost:1313/posts/hello-world/</link>
+				<pubDate>Wed, 24 Sep 2025 18:02:34 -0400</pubDate>
+				<guid>http://localhost:1313/posts/hello-world/</guid>
+				<description>&lt;!-- Welcome to your new Hugo site deployed with GitHub Pages and PaperMod!&#xA;&#xA;You can edit this post at `content/posts/hello-world.md` or create more posts in the same folder.&#xA; --&gt;&#xA;&lt;p&gt;under construction&lt;/p&gt;</description>
+			</item>
+	</channel>
 </rss>

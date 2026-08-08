@@ -1,6 +1,6 @@
 baseURL = "https://tammynpm.github.io/"
 title = "tammy"
-languageCode = "en-us"
+locale = "en-us"
 theme = "researcher"
 
 # Theme-specific global toggles
@@ -47,3 +47,6 @@ canonifyURLs = true
     name = "Napkins"
     url = "/napkins/"
     weight = 3
+
+[security]
+  allowContent = ['.*']
