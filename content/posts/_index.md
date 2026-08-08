@@ -1,5 +1,5 @@
 ---
-title: "Napkins"
+title: "Posts"
 draft: false
 ---
 
