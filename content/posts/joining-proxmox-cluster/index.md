@@ -7,8 +7,20 @@ draft: false
 
 This weekend, I'm hitting the limit of my testing infrastructure. My set up was very humble. A Dell mini tower Micro Optiplex 7050 with only 16GB RAM and 256GB SSD. I mean, in this economy \<sigh\>. Luckily, I have an old laptop lying around and the next thought was creating a cluster of Proxmox. Proxmox is no stranger to homelabbers for its uses in hosting VMs and containers. 
 
-Before joining the nodes, make sure they are time synced. Try to ping each other to check for connectivity. 
+Checklist before joining: 
 
+- [ ] the nodes are time synced. Try to ping each other to check for connectivity. 
+- [ ] the nodes have KVM hardware acceleration enabled 
+
+
+## checking hardware acceleration extensions
+run the command `egrep -c '(vmx|svm)' /proc/cpuinfo` on the nodes. 
+
+VT-x  is Intel Virtualization Technology that is required for KVM to work. If it's not enabled yet, reboot the node, enter BIOS setup, enable it, save and reboot. 
+
+Verity from your node `egrep -c '(vmx|svm)' /proc/cpuinfo`. 
+
+## joining a cluster 
 To join a cluster, we need a cluster. First, make sure you have a cluster created from an existing node. To do this, go to `Datacenter > Cluster > Create Cluster`. 
 
 ![fig1](images/2026-08-07-23-01-34.png)
