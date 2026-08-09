@@ -31,3 +31,17 @@ On etiher node, run: `pvecm status` and you're expected to see results like this
 
 ![fig2](images/2026-08-07-23-16-39.png)
 
+## Disabling Proxmox enterprise repo 
+![fig3](images/2026-08-08-18-17-26.png)
+
+Empty this file out. 
+
+ 
+![fig4](images/2026-08-08-18-18-46.png)
+
+Then add 
+![fig5](images/2026-08-08-18-20-31.png)
+
+update again `apt update` 
+
+
