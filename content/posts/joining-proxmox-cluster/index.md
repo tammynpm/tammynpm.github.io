@@ -121,7 +121,14 @@ ip route get 10.0.0.2
     cache
 ```
 
-which means Tailscale is taking over the routing table to intercept traffic to node 1. As a result, corosync lost its link -knet traffic to node 1 was going through Tailscale's tunnel instead of directly over `vmbr0`. 
+meanwhile on node 1: 
+```
+ip route get 10.0.0.2
+local 10.0.0.2 dev lo table local src 10.0.0.2 uid 0 
+    cache <local>
+```
+
+This means Tailscale is taking over the routing table to intercept traffic to node 1. As a result, corosync lost its link -knet traffic to node 1 was going through Tailscale's tunnel instead of directly over `vmbr0`. 
 
 
 The solution is stop node 2 from accepting that route: 
@@ -156,4 +163,6 @@ Flags:            Quorate
 then restart corosync (optional) 
 `systemctl restart corosync`
 
-```
+
+
+
