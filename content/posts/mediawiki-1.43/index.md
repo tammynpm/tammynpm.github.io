@@ -142,7 +142,7 @@ The empty page problem persisted after disabling the extension VisualEditor and 
 ```
 - -  10/Aug/2026:00:44:18 +0000 "GET /w/rest.php" 200
 - -  10/Aug/2026:00:44:18 +0000 "GET /w/api.php" 200
-2026/08/10 00:44:18 [error] 42#42: *4 FastCGI sent in stderr: "PHP message: [2026-08-10T00:44:18.365402+00:00] error.ERROR: [5e1d3088b7f16e9fd046fcc2] /w/rest.php/mws/v1/tags   PHP Warning: foreach() argument must be of type array|object, null given {"exception":"[object] (ErrorException(code: 0): PHP Warning: foreach() argument must be of type array|object, null given at /app/bluespice/w/vendor/mwstake/mediawiki-component-generictaghandler/src/Rest/ListTagsHandler.php:29)","exception_url":"/w/rest.php/mws/v1/tags","reqId":"5e1d3088b7f16e9fd046fcc2","caught_by":"mwe_handler"} {"host":"03c82f03f177","wiki":"cswiki","mwversion":"1.43.8","reqId":"5e1d3088b7f16e9fd046fcc2"}; PHP message: [2026-08-10T00:44:18.366640+00:00] error.ERROR: [5e1d3088b7f16e9fd046fcc2] /w/rest.php/mws/v1/tags   PHP Warning: foreach() argument must be of type array|object, null given {"exception":"[object]
+2026/08/10 00:44:18 [error] 42#42: *4 FastCGI sent in stderr: "PHP message: [2026-08-10T00:44:18.365402+00:00] error.ERROR: [5e1d3088b7f16e9fd046fcc2] /w/rest.php/mws/v1/tags   PHP Warning: foreach() argument must be of type array|object, null given {"exception":"[object] (ErrorException(code: 0): PHP Warning: foreach() argument must be of type array|object, null given at /app/bluespice/w/vendor/mwstake/mediawiki-component-generictaghandler/src/Rest/ListTagsHandler.php:29)","exception_url":"/w/rest.php/mws/v1/tags","reqId":"5e1d3088b7f16e9fd046fcc2","caught_by":"mwe_handler"} {"host":"03c82f03f177","wiki":"cswiki","mwversion":"1.43.8","reqId":"5e1d3088b7f16e9fd046fcc2"}; PHP message: [2026-08-10T00:44:18.366640+00:00] error.ERROR: [5e1d3088b7f16e9fd046fcc2] /w/rest.php/mws/v1/tags   PHP Warning: foreach() argument must be of type array|object, null given {"exception":"[
 
 (ErrorException(code: 0): PHP Warning: foreach() argument must be of type array|object, null given at /app/bluespice/w/vendor/mwstake/mediawiki-component-generictaghandler/src/Rest/ListTagsHandler.php:29)","exception_url":"/w/rest.php/mws/v1/tags","reqId":"5e1d3088b7f16e9fd046fcc2","caught_by":"mwe_handler"} {"host":"03c82f03f177","wiki":"cswiki","mwversion":"1.43.8","reqId":"5e1d3088b7f16e9fd046fcc2"}; PHP message: [2026-08-10T00:44:18.371577+00:00] error.ERROR: [5e1d3088b7f16e9fd046fcc2] /w/rest.php/mws/v1/tags   PHP Warning: foreach() argument must be of type array|object, null given {"exception":"[object] (ErrorException(code: 0): PHP Warning: foreach() argument must be of type array|object, null given at /app/bluespice/w/vendor/mwstake/mediawiki-component-generictaghandler/src/Rest/ListTagsHandler.php:29)","exception_url":"/w/rest.php/mws/v1/tags","reqId":"5e1d3088b7f16e9fd046fcc2","caught_by":"mwe_handler"} {"host":"03c82f03f177","wiki":"cswiki","mwversion":"1.43.8","reqId":"5e1d3088b7f16e9fd046fcc2"}; PHP message: [2026-08-10T00:44:18.380648+00:00] error.ERROR: [5e1d3088b7f16e9fd046fcc2] /w/rest.php/mws/v1/tags   PHP Warning: foreac
 - -  10/Aug/2026:00:44:18 +0000 "GET /w/rest.php" 200
@@ -170,4 +170,179 @@ after a night of debugging, I found workaround that is to update it to 1.41 firs
 ## installing core mediawiki 1.43
 
 find the latest tarball from https://releases.wikimedia.org/mediawiki/1.43/ 
+
+
+
+## installing bluespice 5.2.6 
+
+Hardware requirement:
+RAM: at least 8GiB
+CPU: 8 cores
+Disk storage: at least 20GB 
+
+install docker engine, git on the machine. 
+clone the repo of bluespice-deploy `git clone `
+
+```
+cd bluespice-deploy/compose/
+```
+
+create the data directory `/data/bluespice/` 
+
+create `.env` and spin up the docker stack using the wrapper `./bluespice-deploy up -d`. 
+
+```
+ docker exec -i bluespice-database mariadb -h 127.0.0.1 -P 3306 -u bluespice -pwikipass cswiki < cswiki_1439_export.sql
+--------------
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`bluespice_user`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `dpl_clview` AS select ifnull(`cswiki`.`categorylinks`.`cl_from`,`cswiki`.`page`.`page_id`) AS `cl_from`,ifnull(`cswiki`.`categorylinks`.`cl_to`,'') AS `cl_to`,`cswiki`.`categorylinks`.`cl_sortkey` AS `cl_sortkey` from (`page` left join `categorylinks` on(`cswiki`.`page`.`page_id` = `cswiki`.`categorylinks`.`cl_from`)) */
+--------------
+
+ERROR 1227 (42000) at line 2762: Access denied; you need (at least one of) the SET USER privilege(s) for this operation
+```
+
+i tried to dump the database as a user, not root. Because the dump included a VIEW that was defined with DEFINER clause. A DEFINER clause in MariaDB gives a user account the ownership of objects in the database. 
+
+we can strip away this clause from the dump. 
+`sed -i -E 's/DEFINER=`[^`]+`@`[^`]+`//g' cswiki_1439_export.sql`
+
+
+`docker exec -i bluespice-database mariadb -h 127.0.0.1 -P 3306 -u bluespice -pwikipass cswiki < cswiki_1439_export.sql`
+
+
+![96 tables in the database imported](images/2026-08-10-16-41-36.png)
+96 tables in the database before loading any extension. 
+
+i think the order of doing this matters. You should try to import the database before loading the extensions first just to make sure the maintenance scripts are able to fix the schema. For some reasons, if you do it the other way around, the maintenance scripts won't be able to fix the schema. 
+```
+show tables;
++--------------------------------+
+| Tables_in_cswiki               |
++--------------------------------+
+| actor                          |
+| archive                        |
+| block                          |
+| block_target                   |
+| bot_passwords                  |
+| bs_dashboards_configs          |
+| bs_editnotifyconnector         |
+| bs_extendedsearch_history      |
+| bs_extendedsearch_relevance    |
+| bs_extendedsearch_trace        |
+| bs_extendedstatistics_snapshot |
+| bs_pageassignments             |
+| bs_pagetemplate                |
+| bs_privacy_request             |
+| bs_readers                     |
+| bs_saferedit                   |
+| bs_settings3                   |
+| bs_usagetracker                |
+| bs_whoisonline                 |
+| category                       |
+| categorylinks                  |
+| change_tag                     |
+| change_tag_def                 |
+| comment                        |
+| content                        |
+| content_models                 |
+| dpl_clview                     |
+| echo_email_batch               |
+| echo_event                     |
+| echo_notification              |
+| echo_push_provider             |
+| echo_push_subscription         |
+| echo_target_page               |
+| externallinks                  |
+| filearchive                    |
+| hit_counter                    |
+| hit_counter_extension          |
+| image                          |
+| imagelinks                     |
+| interwiki                      |
+| invitesignup                   |
+| ip_changes                     |
+| ipblocks_restrictions          |
+| iwlinks                        |
+| job                            |
+| l10n_cache                     |
+| langlinks                      |
+| ldap_domains                   |
+| linktarget                     |
+| log_search                     |
+| logging                        |
+| module_deps                    |
+| mws_category_index             |
+| mws_title_index                |
+| mws_user_index                 |
+| mwstake_dynamic_config         |
+| notifications_event            |
+| notifications_instance         |
+| notifications_web_query_store  |
+| oathauth_users                 |
+| objectcache                    |
+| oldimage                       |
+| page                           |
+| page_props                     |
+| page_restrictions              |
+| pagelinks                      |
+| process_plugin_lock            |
+| processes                      |
+| protected_titles               |
+| querycache                     |
+| querycache_info                |
+| querycachetwo                  |
+| recentchanges                  |
+| redirect                       |
+| revision                       |
+| searchindex                    |
+| site_identifiers               |
+| site_stats                     |
+| sites                          |
+| slot_roles                     |
+| slots                          |
+| templatelinks                  |
+| text                           |
+| titlekey                       |
+| updatelog                      |
+| uploadstash                    |
+| user                           |
+| user_autocreate_serial         |
+| user_former_groups             |
+| user_groups                    |
+| user_newtalk                   |
+| user_properties                |
+| watchlist                      |
+| watchlist_expiry               |
+| wiki_cron                      |
+| wiki_cron_history              |
++--------------------------------+
+96 rows in set (0.001 sec)
+```
+
+
+
+#### pre & post-init-settings.php 
+
+these are the final bosses of this challenge. 
+
+
+##### extensions
+after we have the extensions downloaded in `/data/bluespice/wiki/bluespice/extensions/`, we need to load it in `post-init-settings.php` and mount the extensions directory into the container's actual path via compose override: 
+
+```
+services:
+  wiki-web:
+    volumes:
+      - ${DATADIR}/wiki:/data
+      - ${DATADIR}/wiki/extensions/:/app/bluespice/w/extensions/
+  wiki-task:
+    volumes:
+      - ${DATADIR}/wiki:/data
+      - ${DATADIR}/wiki/extensions/:/app/bluespice/w/extensions/
+
+```
+
+`./bluespice-deploy exec wiki-task php /app/bluespice/w/maintenance/run.php update --quick`
+
 
