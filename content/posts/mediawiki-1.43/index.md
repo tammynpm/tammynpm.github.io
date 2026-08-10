@@ -328,7 +328,7 @@ these are the final bosses of this challenge.
 
 
 ##### extensions
-after we have the extensions downloaded in `/data/bluespice/wiki/bluespice/extensions/`, we need to load it in `post-init-settings.php` and mount the extensions directory into the container's actual path via compose override: 
+after we have the extensions downloaded in `/data/bluespice/wiki/extensions/`, we need to load it in `post-init-settings.php` and mount the extensions directory into the container's actual path via compose override: 
 
 ```
 services:
@@ -344,5 +344,74 @@ services:
 ```
 
 `./bluespice-deploy exec wiki-task php /app/bluespice/w/maintenance/run.php update --quick`
+
+
+```
+stat extensions/BlueSpiceDashboards/extension.json 
+  File: extensions/BlueSpiceDashboards/extension.json
+  Size: 5056      	Blocks: 16         IO Block: 4096   regular file
+Device: 8,4	Inode: 109107464   Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1002/ UNKNOWN)   Gid: ( 1002/ UNKNOWN)
+Context: unconfined_u:object_r:user_home_t:s0
+Access: 2026-08-10 20:47:11.106332475 +0000
+Modify: 2026-08-10 20:47:11.107332468 +0000
+Change: 2026-08-10 20:53:44.821446942 +0000
+ Birth: 2026-08-10 20:47:11.106332475 +0000
+```
+
+
+```
+getenforce
+Enforcing
+```
+
+
+temporary fix: 
+```
+sudo chcon -R -t container_file_t /data/bluespice
+```
+`chcon` can't change the underlying SELinux policy. Any changes made with `chcon` will be overwritten or revert back to the defaults whenever the system is relabeled or when `restorecon` command is executed. 
+
+To make it persistent, we have to write the rule directory to the SELinux policy with `semanage` and apply it. you may have to install `semanage` first with command `sudo dnf install policycoreutils-python-utils`. 
+
+```
+sudo semanage fcontext -a -t container_file_t '/data/bluespice(/.*)?'
+sduo restorecon -Rv /data/bluespice/
+```
+
+Don't worry if you have the warnings that `not reset as customized by admin to unconfined_u:object_r:container_file_t:s0`. this means that these files were already labeled from the `chcon` command earlier. 
+
+restart the containers. 
+
+
+### Images not display
+
+This part only applies if you want to use NSFileRepo for MediaWiki1.43
+
+Since the images were structured by this extension. It's worrisome if we want to move to >MediaWiki1.43. 
+
+MediaWiki can handle the images, but it uses MD5 hashes for strucutring the images, which would confuse the database. 
+
+This is an obvious technical debt, and further research needs to be put into this.
+
+
+`nsfr_img_auth.php` is the key here. It is a direct HTTP entrypoint so it needs to be under the same parent directory as `index.php`, i.e., it sits here `/app/bluespice/w/nsfr_img_auth.php` inside the wiki-web container.
+
+`docker exec bluespice-wiki-web ls -la /app/bluespice/w/nsfr_img_auth.php` to check if `nsfr_img_auth.php` is at the correct path.
+
+an approach for this is bind-mounting the file under the extensions directory using the override file:
+
+```
+services:
+  wiki-web:
+    volumes:
+      - ${DATADIR}/wiki/extensions/NSFileRepo/nsfr_img_auth.php:/app/bluespice/w/nsfr_img_auth.php
+      - ${DATADIR}/wiki/extensions/:/app/bluespice/w/extensions/
+  wiki-task:
+    volumes:
+      - ${DATADIR}/wiki/extensions/NSFileRepo/nsfr_img_auth.php:/app/bluespice/w/nsfr_img_auth.php
+      - ${DATADIR}/wiki/extensions/:/app/bluespice/w/extensions/
+```
+
 
 
