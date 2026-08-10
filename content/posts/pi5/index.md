@@ -25,4 +25,9 @@ You can use Raspberry Pi Imager to bake your SSH public key into the image. In m
 Ensure that SSH is running on Pi. More on this [https://www.raspberrypi.com/documentation/computers/remote-access.html#:~:text=Enable%20the%20SSH%20server]()
 
 
+## Docker on Pi5
+
+Just install like on Debian. If you aren't sure, check the os-release of the image and install Docker Engine accordingly. 
+
+
 

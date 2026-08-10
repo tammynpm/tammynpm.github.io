@@ -165,3 +165,9 @@ It was called by the VisualEditorPlus extension. VisualEditorPlus was loaded bec
 
 
 after a night of debugging, I found workaround that is to update it to 1.41 first. 
+
+
+## installing core mediawiki 1.43
+
+find the latest tarball from https://releases.wikimedia.org/mediawiki/1.43/ 
+
