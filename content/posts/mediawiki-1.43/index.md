@@ -330,16 +330,18 @@ these are the final bosses of this challenge.
 ##### extensions
 after we have the extensions downloaded in `/data/bluespice/wiki/extensions/`, we need to load it in `post-init-settings.php` and mount the extensions directory into the container's actual path via compose override: 
 
+Put all the extensions needed in a `custom-extensions` folder and mount to the container instead of overriding the bundled extensions. 
+
 ```
 services:
   wiki-web:
     volumes:
-      - ${DATADIR}/wiki:/data
-      - ${DATADIR}/wiki/extensions/:/app/bluespice/w/extensions/
+      - ${DATADIR}/wiki/extensions/NSFileRepo/nsfr_img_auth.php:/app/bluespice/w/nsfr_img_auth.php
+      - ${DATADIR}/wiki/custom-extensions/:/app/bluespice/w/custom-extensions/
   wiki-task:
     volumes:
-      - ${DATADIR}/wiki:/data
-      - ${DATADIR}/wiki/extensions/:/app/bluespice/w/extensions/
+      - ${DATADIR}/wiki/extensions/NSFileRepo/nsfr_img_auth.php:/app/bluespice/w/nsfr_img_auth.php
+      - ${DATADIR}/wiki/custom-extensions/:/app/bluespice/w/custom-extensions/
 
 ```
 
@@ -373,6 +375,10 @@ sudo chcon -R -t container_file_t /data/bluespice
 `chcon` can't change the underlying SELinux policy. Any changes made with `chcon` will be overwritten or revert back to the defaults whenever the system is relabeled or when `restorecon` command is executed. 
 
 To make it persistent, we have to write the rule directory to the SELinux policy with `semanage` and apply it. you may have to install `semanage` first with command `sudo dnf install policycoreutils-python-utils`. 
+
+*TODO: interpret this* 
+
+![chcon not persistent](images/2026-08-11-11-38-43.png)
 
 ```
 sudo semanage fcontext -a -t container_file_t '/data/bluespice(/.*)?'
@@ -415,3 +421,66 @@ services:
 
 
 
+`$wgUploadDirectory` tells `nsfr_img_auth.php` where the images' bytes.
+
+MAKE SURE THE BINDING AND $wgUploadDirectory MATCHES!!!!!
+
+#### path resolution in `nsfr_img_auth.php`
+
+`__DIR__` locates at `/app/bluespice/w/included`
+
+
+### fastcgi buffer overflow 
+
+LDAP extensions are not pre-bundled in the Free version. The Mediawiki LDAP stack inclues: LDAPProvider, LDDAPGroups, LDAPAuthorization via PluggableAuth, 
+
+this is most likely caused by the LDAP extensions. 
+
+nginx's default buffer allocation is usually 4k or 8k
+
+```
+docker exec bluespice-wiki-web find /etc/nginx -name "*.conf" 2>/dev/null
+/etc/nginx/fastcgi.conf
+/etc/nginx/http.d/default.conf
+/etc/nginx/nginx.conf
+```
+
+```
+docker exec bluespice-wiki-web grep -rn "fastcgi_pass\|fastcgi_buffer" /etc/nginx/ 2>/dev/null
+/etc/nginx/nginx.conf:27:	fastcgi_buffering off;
+/etc/nginx/sites-enabled/default:61:		fastcgi_pass unix:/var/run/php/php-fpm.sock;
+/etc/nginx/sites-enabled/default:69:		fastcgi_pass unix:/var/run/php/php-fpm.sock;
+/etc/nginx/sites-enabled/default:88:					fastcgi_pass unix:/var/run/php/php-fpm.sock;
+```
+
+
+right now, `nginx.conf` set `fastcgi_buffering_off` globally.
+
+
+
+NOTE: NOTE: Do not run maintenance scripts directly, use maintenance/run.php instead!
+      Running scripts directly has been deprecated in MediaWiki 1.40.
+      It may not work for some (or any) scripts in the future.
+
+for example, if you want to run `php /app/bluespice/w/maintenance/update.php` do `php /app/bluespice/w/maintenance/run.php update` instead. 
+
+
+## fixing logo path 
+
+`http://10.0.0.224/w/index.php?title=Main_Page&sfr=w` display logo but `http://10.0.0.224/wiki/Main_Page` don't. 
+
+this fix including looking at `post-init-settings.php` and the database. 
+
+```
+docker exec bluespice-database mariadb -h 127.0.0.1 -u  wikiuser -pwikipass cswiki -e "SELECT * FROM bs_settings3 WHERE s_value LIKE '%wordmark%' OR s_value LIKE '%cics%';"
+s_name	s_value
+Logo	"/resources/assets/cics-wordmark.png"
+```
+
+we can fix this on the web UI. Go to `Special:BlueSpiceConfigManager`. On the left sidebar, choose `Skinning` 
+
+![Special:BlueSpiceConfigManager](images/2026-08-11-11-10-03.png)
+
+
+
+another way is to use FlexiSkin. 
