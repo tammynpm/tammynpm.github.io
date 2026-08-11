@@ -8,7 +8,7 @@ Background info:
 
 - [ ] AlmaLinux10 CloudInit Qcow2 
 
-```
+```bash
 sudo dnf install -y kernel-modules-extra
 Last metadata expiration check: 0:16:22 ago on Mon 10 Aug 2026 04:02:02 PM UTC.
 Dependencies resolved.
