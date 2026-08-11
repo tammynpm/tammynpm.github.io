@@ -47,8 +47,6 @@ Then reboot.
 
 ```
 sudo modprobe xt_addrtype
-
-sudo modprobe xt_addrtype
 lsmod | grep addrtype
 sudo systemctl start docker
 sudo systemctl status docker
