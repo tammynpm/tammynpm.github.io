@@ -4,6 +4,10 @@ date: 2026-08-10T12:14:38-04:00
 draft: false
 ---
 
+Background info:
+
+- [ ] AlmaLinux10 CloudInit Qcow2 
+
 ```
 sudo dnf install -y kernel-modules-extra
 Last metadata expiration check: 0:16:22 ago on Mon 10 Aug 2026 04:02:02 PM UTC.
